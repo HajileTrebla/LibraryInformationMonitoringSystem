@@ -8,8 +8,13 @@ body {
     font-size: 2em;
 }
 
-.TopBar .Logo {
+.TopBar .Logo{
     float: left;
+}
+
+.TopBar .Logo a img{
+    max-width: 20%;
+    height: auto;
 }
 
 .TopBar nav {
