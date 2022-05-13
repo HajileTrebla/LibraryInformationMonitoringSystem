@@ -1,45 +1,68 @@
-body {
-    color: whitesmoke;
+body{
     background-color: #D2E8CF;
 }
 
-.TopBar {
-    background-image: url('../assets.img/Header.svg');
-    background-repeat: no-repeat;
-    color: aquamarine;
-    font-size: 2em;
+.Header{
+    width: 100%;
+    height: 15em;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+
+    background: #225A40;
+    border-bottom: 8px solid #E5D435;
+
 }
 
-.TopBar .Logo {
+.Header .Logo{
     float: left;
 }
 
-.TopBar nav {
-    font-weight: bold;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    text-decoration: none;
+.Logo img{
+    position: absolute;
+    width: 176px;
+    height: 176px;
+    left: 27px;
+    top: 38px;
+}
+.HH1{
+    position: absolute;
+    width: 531px;
+    height: 70px;
+    left: 226px;
+    top: 63px;
+
+    font-family: 'Poppins', sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,400;1,600&display=swap');
+    font-style: normal;
+    font-weight: 800;
+    color: #FFFFFF;
+    font-size: 1em;
+    line-height: 1.8em;
 }
 
-.right li{
+.HH2{
+    font-size: 0.8em;
+}
+
+.Choices li{
     list-style-type: none;
     float: right;
 }
 
-.right li a{
+.Choices li a{
+    font-weight: bolder;
     display: block;
+    font-family: 'Poppins', sans-serif;
     color: white;
+    font-size: 1.3em;
+    margin-top: 2.9em;
     text-align: center;
     padding: 16px;
     text-decoration: none;
 }
 
-.right li a:hover{
-    background-color: #111111;
-}
-
-.Footer {
+.Footer{
     position: absolute;
     width: 100%;
     height: 80px;
@@ -48,4 +71,10 @@ body {
 
     background: #225A40;
     border-top: 8px solid #E5D435;
+}
+
+
+.Choices li a:hover{
+    background-color: darkolivegreen;
+    border-radius: 0.5em;
 }
