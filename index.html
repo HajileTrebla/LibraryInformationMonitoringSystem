@@ -11,13 +11,18 @@
 
     </head>
     <body>
+        <script>
+            //auto refresh during development
+            setInterval(function(){location.reload(true);}, 10000);
+        </script>
+
        <div class="TopBar">
            <nav>
                <div class="Logo"><a href="/LibraryInformationMonitoringSystem/index.html"><img src="/LibraryInformationMonitoringSystem/assets.img/MMPNS-Logo.jpg" alt=""></a></a></div>
 
                <section class="Top-Bar-Section">
                     <ul class="right">
-                        <li class=""><a href="/LibraryInformationMonitoringSystem/login.html">Login</a></li>
+                        <li class=""><button>Login</button></li>
                         <li class=""><a href="/LibraryInformationMonitoringSystem/inventory.html">Inventory</a></li>
                         <li class=""><a href="/LibraryInformationMonitoringSystem/report.html">Report</a></li>
                         <li class=""><a href="/LibraryInformationMonitoringSystem/records.html">Records</a></li>

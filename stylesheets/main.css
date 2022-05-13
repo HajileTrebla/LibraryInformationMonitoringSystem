@@ -27,12 +27,12 @@ body {
 
 .right li a{
     display: block;
-    color: yellow;
+    color: white;
     text-align: center;
     padding: 16px;
     text-decoration: none;
 }
 
 .right li a:hover{
-    background-color: #FFFFFF;
+    background-color: #111111;
 }
