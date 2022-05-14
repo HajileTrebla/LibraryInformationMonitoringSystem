@@ -1,4 +1,4 @@
---TableCreation
+--TableCreation for Transaction Monitoring
 
 --Create Registered Students Table
 CREATE TABLE mmpns.lib_students(
@@ -50,7 +50,16 @@ CREATE TABLE mmpns.lib_inventory_authors(
 CREATE TABLE mmpns.lib_inventory_subjects(
     subjectID BIGSERIAL NOT NULL PRIMARY KEY,
     subjectName VARCHAR(50) NOT NULL,
-)
+);
 
 
+--TableCreation for Login and admin use-case
+--Create Users Table
+CREATE TABLE users (
+    usersID INT(10) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    usersName VARCHAR(128) NOT NULL, 
+    usersEmail VARCHAR(128) NOT NULL, 
+    usersUid VARCHAR(128) NOT NULL, 
+    usersPwd VARCHAR(128) NOT NULL 
+);
 
