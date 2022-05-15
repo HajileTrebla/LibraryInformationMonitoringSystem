@@ -2,14 +2,14 @@
 --to execute run "\i path" while in the database
 
 --TableReset REMOVE COMMENT TAGS WITH CAUTION AND ONLY WHEN A BACKUP UP TO DATE
---DROP TABLE IF EXISTS lib_students;
---DROP TABLE IF EXISTS lib_borrowing_status;
---DROP TABLE IF EXISTS lib_transactions;
---DROP TABLE IF EXISTS lib_transaction_details;
---DROP TABLE IF EXISTS lib_inventory;
---DROP TABLE IF EXISTS lib_inventory_authors;
---DROP TABLE IF EXISTS lib_inventory_subjects;
---DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS lib_borrowing_status;
+DROP TABLE IF EXISTS lib_transaction_details;
+DROP TABLE IF EXISTS lib_inventory;
+DROP TABLE IF EXISTS lib_inventory_authors;
+DROP TABLE IF EXISTS lib_inventory_subjects;
+DROP TABLE IF EXISTS lib_transactions;
+DROP TABLE IF EXISTS lib_students;
+DROP TABLE IF EXISTS users;
 
 --TableCreation for Transaction Monitoring
 --Create Registered Students Table
@@ -25,7 +25,7 @@ CREATE TABLE lib_students(
 CREATE TABLE lib_transactions(
     transactionID BIGSERIAL NOT NULL PRIMARY KEY,
     studentID BIGSERIAL NOT NULL,
-    dateDue DATE NOT NULL,
+    dateDue DATE,
     CONSTRAINT fk_studentID FOREIGN KEY(studentID) REFERENCES lib_students(studentID)
 );
 
@@ -75,7 +75,7 @@ CREATE TABLE lib_borrowing_status(
 
 --TableCreation for Login and admin use-case
 --Create Users Table
-CREATE TABLE users (
+CREATE TABLE users(
     usersID BIGSERIAL NOT NULL PRIMARY KEY,
     usersName VARCHAR(128) NOT NULL, 
     usersEmail VARCHAR(128) NOT NULL, 
@@ -83,3 +83,9 @@ CREATE TABLE users (
     usersPwd VARCHAR(128) NOT NULL
 );
 
+INSERT INTO users(
+    usersName, usersEmail, usersUid, usersPwd
+)
+VALUES(
+    'Admin', 'Admin', 'Admin', '1234'
+);
