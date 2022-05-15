@@ -1,4 +1,6 @@
 --path = C:/xampp/htdocs/LibraryInformationMonitoringSystem/db/db.queries/CreateTables.sql
+--to execute run "\i path" while in the database
+
 --TableReset REMOVE COMMENT TAGS WITH CAUTION AND ONLY WHEN A BACKUP UP TO DATE
 --DROP TABLE IF EXISTS lib_students;
 --DROP TABLE IF EXISTS lib_borrowing_status;
