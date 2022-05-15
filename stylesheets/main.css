@@ -5,10 +5,14 @@
     max-height: 100%;
     background-size: cover;
 } */
+.Wrapper{
+    width: 100%;
+    min-height: 100%;
+}
 
 .hero{
     width: 100%;
-    padding: 20% 0% 19% 0%;
+    padding: 20% 0% 19%;
     background: url(../assets.img/bg.jpg) no-repeat center;
     left: 0px;
     right: 0px;
@@ -17,6 +21,7 @@
     background-size: cover;
     position: absolute;
     margin-top: 11.6em;
+    background-attachment: fixed;
 }
 
 .Header .Logo{
@@ -48,6 +53,7 @@
     height: 70px;
     left: 189px;
     top: 43px;
+
     font-family: 'Poppins', sans-serif;
     src: url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,400;1,600&display=swap');
     font-style: normal;
@@ -62,11 +68,13 @@
 }
 
 .line1{
+    /*
     position: absolute;
     width: 860px;
     height: 199px;
     left: 343px;
     top: 217px;
+     */
 
     font-family: 'Poppins', sans-serif;
     font-style: normal;
@@ -78,11 +86,13 @@
 }
 
 .line2{
+    /*
     position: absolute;
     width: 860px;
     height: 199px;
     left: 343px;
     top: 265px;
+    */
 
     font-family: 'Poppins', sans-serif;
     font-style: normal;
@@ -94,11 +104,13 @@
 }
 
 .line3{
+    /*
     position: absolute;
     width: 860px;
     height: 179px;
     left: 343px;
     top: 315px;
+    */
 
     font-family: 'Poppins', sans-serif;
     font-style: normal;
@@ -154,3 +166,10 @@
    border-radius: 0.5em;
 }
 
+.homeText {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5em;
+}
+
+.homeText:hover{
+}
