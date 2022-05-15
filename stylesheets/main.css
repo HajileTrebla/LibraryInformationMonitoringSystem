@@ -1,53 +1,53 @@
-body{
-    margin: 0px;
-    padding: 0px;
-    overflow-x: hidden;
-    background-color: #D2E8CF;
-    min-width: 1440px;
-    max-width: 1440px;
-}
+/*body{
+    background-image: url(../assets.img/bg.jpg);
+    background-repeat: no-repeat;
+    max-width: 100%;
+    max-height: 100%;
+    background-size: cover;
+} */
 
-.Header{
-    /*
+.hero{
     width: 100%;
-    height: 15em;
-    position: absolute;
+    padding: 20% 0% 19% 0%;
+    background: url(../assets.img/bg.jpg) no-repeat center;
     left: 0px;
-    top: 0px;
-
-    background: #225A40;
-    border-bottom: 8px solid #E5D435;
-    */
-    background: url(../assets.img/Header.svg);
+    right: 0px;
+    max-width: 120%;
+    max-height: 50%;
     background-size: cover;
     position: absolute;
-    top: 0;
-   /* bottom: 30em;*/
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 20em;
-    width: 100%;
+    margin-top: 11.6em;
 }
-
 
 .Header .Logo{
     float: left;
 }
 
+.headerbg{
+    position: absolute;
+    width: 100%;
+    height: 188px;
+    left: 0px;
+    top: 0px;
+
+    background-color: #100B0B;
+    border-bottom: 7px solid #2C7A56;
+}
+
 .Logo img{
     position: absolute;
-    width: 176px;
-    height: 176px;
-    left: 27px;
-    top: 38px;
+    width: 133px;
+    height: 133px;
+    left: 30px;
+    top: 27px;
 }
+
 .HH1{
     position: absolute;
     width: 531px;
     height: 70px;
-    left: 226px;
-    top: 63px;
-
+    left: 189px;
+    top: 43px;
     font-family: 'Poppins', sans-serif;
     src: url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,400;1,600&display=swap');
     font-style: normal;
@@ -61,12 +61,66 @@ body{
     font-size: 0.8em;
 }
 
-.Choices li{
+.line1{
+    position: absolute;
+    width: 860px;
+    height: 199px;
+    left: 343px;
+    top: 217px;
+
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 42px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.line2{
+    position: absolute;
+    width: 860px;
+    height: 199px;
+    left: 343px;
+    top: 265px;
+
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 42px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.line3{
+    position: absolute;
+    width: 860px;
+    height: 179px;
+    left: 343px;
+    top: 315px;
+
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 39px;
+    line-height: 42px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.Menu li a:hover{
+    background-color: darkolivegreen;
+    border-radius: 0.5em;
+    
+}
+
+.RightOptions li{
     list-style-type: none;
     float: right;
 }
 
-.Choices li a{
+.RightOptions li a{
     font-weight: bolder;
     display: block;
     font-family: 'Poppins', sans-serif;
@@ -79,21 +133,24 @@ body{
     text-decoration: none;
 }
 
-.Footer{
-    position: absolute;
-    background-position: center;
-    width: 100%;
-    height: 80px;
-    left: 0px;
-    bottom:0;
-    top: 944px;
-
-    background: #225A40;
-    border-top: 8px solid #E5D435;
+.Menu .Button{
+    font-weight: bolder;
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3em;
+    margin-top: 2.5em;
+    margin-right: 0.8em;
+    background-color: #100B0B;
+    border: none;
+    color: white;
+    padding: 16px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.3em;
 }
 
-
-.Choices li a:hover{
-    background-color: darkolivegreen;
-    border-radius: 0.5em;
+.Menu .Button:hover{
+   background-color: darkolivegreen; 
+   border-radius: 0.5em;
 }
+
