@@ -57,7 +57,7 @@ CREATE TABLE lib_inventory(
 CREATE TABLE lib_transaction_details(
     transactionID BIGSERIAL NOT NULL,
     resourceID BIGSERIAL NOT NULL, 
-    processDate DATE NOT NULL,
+    processDate DATE DEFAULT CURRENT_DATE NOT NULL,
     CONSTRAINT fk_transactionID FOREIGN KEY(transactionID) REFERENCES lib_transactions(transactionID),
     CONSTRAINT fk_resourceID FOREIGN KEY(resourceID) REFERENCES lib_inventory(resourceID)
 );

@@ -57,3 +57,4 @@ function loginUser($dbConn, $username, $pwd)
         exit();
     }
 }
+
