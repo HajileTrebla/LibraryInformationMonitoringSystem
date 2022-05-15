@@ -18,6 +18,7 @@
             <div class="RightOptions">
                 <ul class="Menu">
                     <li><button class="Button">Login</button></li>
+                    <li><a href="../LibraryInformationMonitoringSystem/about.html">About</a></li>
                     <li><a href="../LibraryInformationMonitoringSystem/inventory.html">Inventory</a></li>
                     <li><a href="../LibraryInformationMonitoringSystem/records.html">Records</a></li>
                     <li><a href="../LibraryInformationMonitoringSystem/index.php">Home</a></li>
