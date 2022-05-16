@@ -52,16 +52,17 @@
         </div>
         <div class="Wrapper">
             <div class="hero">
-                <div class="homeText">
-                    <div class="line1">
-                        Welcome to
-                    </div>
-                    <div class="line2">
-                        Madre Maria Pia Notari School's
-                    </div>
-                    <div class="line3">
-                        Library Monitoring System
-                    </div>
+                <div class="aboutText">
+                    <ul class="schoolBackgroundTitle">
+                        <li><p>SCHOOL</p></li>
+                        <li><p>MISSION</p></li>
+                        <li><p>VISION</p></li>
+                    </ul>
+                    <ul class="schoolBackgroundText">
+                       <li><p>Madre Maria Pia Notari School is a catholic school located in Timothy Street, Multinational Village, Parañaque City. It was established on the year 1988 and it was named after its Foundress, Madre Maria Pia Notari and the school is owned by the Congregation of the Crucified Adorers of the Eucharist. The school is a member of the Catholic Educational Association of the Philippines (CEAP) and it is duly recognized by the government. Complete kindergarten, elementary, and junior high school courses are offered by the Madre Maria Pia Notari School.</p></li>   
+                       <li><p>Madre Maria Pia Notari School is a catholic school located in Timothy Street, Multinational Village, Parañaque City. It was established on the year 1988 and it was named after its Foundress, Madre Maria Pia Notari and the school is owned by the Congregation of the Crucified Adorers of the Eucharist. The school is a member of the Catholic Educational Association of the Philippines (CEAP) and it is duly recognized by the government. Complete kindergarten, elementary, and junior high school courses are offered by the Madre Maria Pia Notari School.</p></li>   
+                       <li><p>Madre Maria Pia Notari School is a catholic school located in Timothy Street, Multinational Village, Parañaque City. It was established on the year 1988 and it was named after its Foundress, Madre Maria Pia Notari and the school is owned by the Congregation of the Crucified Adorers of the Eucharist. The school is a member of the Catholic Educational Association of the Philippines (CEAP) and it is duly recognized by the government. Complete kindergarten, elementary, and junior high school courses are offered by the Madre Maria Pia Notari School.</p></li>   
+                    </ul> 
                 </div>
             </div>
             <!--Borrow to be hidden behind login requirements-->

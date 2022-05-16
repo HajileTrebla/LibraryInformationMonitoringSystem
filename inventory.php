@@ -52,15 +52,12 @@
         </div>
         <div class="Wrapper">
             <div class="hero">
-                <div class="homeText">
+                <div class="inventoryText">
                     <div class="line1">
-                        Welcome to
                     </div>
                     <div class="line2">
-                        Madre Maria Pia Notari School's
                     </div>
                     <div class="line3">
-                        Library Monitoring System
                     </div>
                 </div>
             </div>
