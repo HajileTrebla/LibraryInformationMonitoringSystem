@@ -1,10 +1,3 @@
-/*body{
-    background-image: url(../assets.img/bg.jpg);
-    background-repeat: no-repeat;
-    max-width: 100%;
-    max-height: 100%;
-    background-size: cover;
-} */
 .Wrapper{
     width: 100%;
     min-height: 100%;
@@ -13,7 +6,7 @@
 .hero{
     width: 100%;
     padding: 20% 0% 19%;
-    background: url(../assets.img/bg.jpg) no-repeat center;
+    background: url(../assets.img/abg.jpg) no-repeat center;
     left: 0px;
     right: 0px;
     max-width: 120%;
@@ -54,13 +47,12 @@
     left: 189px;
     top: 43px;
 
-    font-family: 'Poppins', sans-serif;
-    src: url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,400;1,600&display=swap');
+    font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 800;
     color: #FFFFFF;
     font-size: 1em;
-    line-height: 1.8em;
+    line-height: 2em;
 }
 
 .HH2{
@@ -68,63 +60,38 @@
 }
 
 .line1{
-    /*
-    position: absolute;
-    width: 860px;
-    height: 199px;
-    left: 343px;
-    top: 217px;
-     */
-
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 35px;
-    line-height: 42px;
+    line-height: 55px;
     text-align: center;
     color: #FFFFFF;
 }
 
 .line2{
-    /*
-    position: absolute;
-    width: 860px;
-    height: 199px;
-    left: 343px;
-    top: 265px;
-    */
-
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 50px;
-    line-height: 42px;
+    line-height: 55px;
     text-align: center;
     color: #FFFFFF;
 }
 
 .line3{
-    /*
-    position: absolute;
-    width: 860px;
-    height: 179px;
-    left: 343px;
-    top: 315px;
-    */
-
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 39px;
-    line-height: 42px;
+    line-height: 55px;
     text-align: center;
     color: #FFFFFF;
 }
 
 .Menu li a:hover{
     background-color: darkolivegreen;
-    border-radius: 0.5em;
-    
+    border-radius: 1.5em;
 }
 
 .RightOptions li{
@@ -135,7 +102,7 @@
 .RightOptions li a{
     font-weight: bolder;
     display: block;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     color: white;
     font-size: 1.3em;
     margin-top: 2.5em;
@@ -148,7 +115,7 @@
 .Menu .Button{
     font-weight: bolder;
     display: block;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1.3em;
     margin-top: 2.5em;
     margin-right: 0.8em;
@@ -169,62 +136,6 @@
 .homeText {
     background: rgba(0, 0, 0, 0.5);
     padding: 5em;
-}
-
-
-.modal {
-    position: fixed;
-    top: 15%;
-    left: 90%;
-    transform: translate(-50%, -50%) scale(0);
-    border: 1px solid black;
-    border-radius: 10px;
-    z-index: 10;
-    background: rgba(100, 100, 100, 0.8);
-    width: 300px;
-    max-width: 80%;
-}
-
-.modal.active {
-    transform: translate(-50%, -50%) scale(1);
-}
-
-.modal-header {
-    padding: 10px 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid black;
-}
-
-.modal-header .close-button {
-    cursor: pointer;
-    border: none;
-    outline: none;
-    background: none;
-    font-size: 1.25rem;
-    font-weight: bold;
-}
-
-.modal-body{
-    padding: 10px 15px 10px 15px;
-}
-
-#overlay{
-    position: fixed;
-    opacity: 0;
-    transition: 200ms ease-in-out;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    pointer-events: none;
-}
-
-#overlay.active{
-    opacity: 1;
-    pointer-events: all;
 }
 
 .schoolBackgroundTitle{
@@ -280,3 +191,113 @@
     text-align: center;
 }
 
+.popup{
+    background: (0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 10em;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginForm{
+    height: 320px;
+    width: 500px;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    bottom: 8em;
+    border: solid 2px black;
+}
+.loginHeader{
+    width: 542px;
+    height: 117px;
+    position: relative;
+    bottom: 0.5em;
+    right: 0.5em;
+    text-align: center;
+    font-weight: 700;
+    font-size: 40px;
+    font-family: 'Grandstander', cursive;
+    color: white;
+    line-height: 120px;
+
+    background: #100B0B;
+    border-bottom: 7px solid #2C7A56;
+}
+
+input{
+    margin: 20px auto;
+    display: block;
+    width: 50%;
+    padding: 8px;
+    border: 1px solid gray;
+}
+
+.subButton{
+    text-decoration: none;
+    position: relative;
+    left: 42%;
+    top: 1em;
+    font-weight: 400;
+    font-size: 15px;
+    display: block;
+    text-align: center;
+    background: #2C7A56;
+    border-radius: 1.4em;
+    padding: 0.6em;
+    width: 4em;
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+.subButton:hover{
+    background-color: black;
+    border-radius: 0.7em;
+}
+
+.close{
+    position: relative;
+    left: 31.9em;
+    bottom: 9.5em;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.register{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    padding: 0.7em 1.5em 0.7em;
+    background: #2C7A56;
+    position: relative;
+    top: 13em;
+    left: -5em;
+    border-radius: 2em;
+}
+
+.register:hover{
+    background: black;
+}
+
+.borrow{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    padding: 0.7em 1.5em 0.7em;
+    background: #2C7A56;
+    position: relative;
+    top: 13em;
+    left: 78.5em;
+    border-radius: 2em;
+}
+
+.borrow:hover{
+    background: black;
+}
