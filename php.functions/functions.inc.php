@@ -2,32 +2,29 @@
 
 function uidExists($dbConn, $username, $email)
 {
-    $sql = "SELECT * FROM users WHERE usersID = ? OR usersEmail = ?;";
-    if (!pg_send_prepare($dbConn, "", $sql)){
-        header("location ../login.html?error=stmtfailed");
+    $sql = "SELECT * FROM lib_users WHERE usersUid = $1 OR usersEmail = $2;";
+    if (!pg_send_prepare($dbConn, "", $sql)) {
+        header("Location: ../index.php?error=stmtfailed");
         exit();
     }
 
-    $result = pg_prepare($dbConn, "", $sql);
-    $result = pg_execute($dbConn, "", $sql)
-    
-    if ($row = pg_fetch_assoc($result)){
+    $result = pg_prepare($dbConn, "uid query", $sql);
+    $result = pg_execute($dbConn, "uid query", array($username, $email));
+
+    if ($row = pg_fetch_row($result)) {
         return $row;
-    }
-    else{
+    } else {
         $result = false;
         return $result;
         exit();
     }
-
 }
 
-function emptyInputLogin($username, $pwd){
-    $result;
-    if (empty($username) || empty($pwd)){
+function emptyInputLogin($username, $pwd)
+{
+    if (empty($username) || empty($pwd)) {
         $result = true;
-    }
-    else{
+    } else {
         $result = false;
     }
     return $result;
@@ -38,23 +35,20 @@ function loginUser($dbConn, $username, $pwd)
     $uidExists = uidExists($dbConn, $username, $username);
 
     if ($uidExists === false) {
-        header("location ../login.html?error=wronglogin");
+        header("Location: ../index.php?error=wronglogin");
         exit();
     }
 
-    $pwdHashed = $uidExists["usersPwd"];
+    $pwdHashed = password_hash($uidExists[4], PASSWORD_DEFAULT);
     $checkPwd = password_verify($pwd, $pwdHashed);
 
     if ($checkPwd === false) {
-        header("location ../login.html?error=wronglogin");
+        header("Location: ../index.php?error=wrongpassword");
         exit();
-    }
-    else if ($checkPwd === true){
+    } else if ($checkPwd === true) {
         session_start();
-        $_SESSION["userid"] = $uidExists["usersId"];
-        $_SESSION["useruid"] = $uidExists["usersUid"];
-        header("location ../index.html");
-        exit();
+        $_SESSION["userid"] = $uidExists[1];
+        $_SESSION["useruid"] = $uidExists[3];
+        header("Location: ../index.php?loggedin");
     }
 }
-

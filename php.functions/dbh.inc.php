@@ -1,11 +1,14 @@
 <?php
 
-$dbServerHost = "host=localhost";
-$dbUsername = "user=kinilaw";
-$dbPassword = "password=kinilaw";
-$dbName = "dbname=mmnpsLibdb";
+$dbStatement = "host=localhost ";
+$dbStatement .= "port=5432 ";
+$dbStatement .= "user=kinilaw ";
+$dbStatement .= "password=kinilaw ";
+$dbStatement .= "dbname=mmpnslibdb";
 
-$dbConn = pg_connect($dbServerHost, $dbName, $dbUsername, $dbPassword);
+
+
+$dbConn = pg_connect($dbStatement);
 
 if (!$dbConn) {
     die("Connection failed: ");

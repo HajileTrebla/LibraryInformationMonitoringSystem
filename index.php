@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+session_start();
+?>
 <html lang="en">
 
 <head>
@@ -32,10 +35,20 @@
                 </div>
                 <div class="RightOptions">
                     <ul class="Menu">
-                        <li><a href="#" class="button" id="button">Login</a></li>
+                        <?php
+                        if (isset($_SESSION["useruid"])) {
+                            echo '<li><a href="../LibraryInformationMonitoringSystem/php.functions/logout.inc.php" class="button" id="Logout-button">Logout</a></li>';
+                        } else {
+                            echo '<li><a href="#" class="button" id="Login-button">Login</a></li>';
+                        }
+                        ?>
                         <li><a href="../LibraryInformationMonitoringSystem/about.php">About</a></li>
-                        <li><a href="../LibraryInformationMonitoringSystem/inventory.php">Inventory</a></li>
-                        <li><a href="../LibraryInformationMonitoringSystem/records.php">Records</a></li>
+                        <?php
+                        if (isset($_SESSION["useruid"])) {
+                            echo '<li><a href="../LibraryInformationMonitoringSystem/inventory.php">Inventory</a></li>';
+                            echo '<li><a href="../LibraryInformationMonitoringSystem/records.php">Records</a></li>';
+                        }
+                        ?>
                         <li><a href="../LibraryInformationMonitoringSystem/index.php">Home</a></li>
                     </ul>
                 </div>
@@ -64,8 +77,8 @@
                             <div class="loginText">
                                 <form action="php.functions/login.inc.php" method="POST">
                                     <input type="text" name="uid" placeholder="Username">
-                                    <input type="password" iname="pwd" placeholder="Password">
-                                    <button type="submit" class="submit" name="submit">LOGIN</button>
+                                    <input type="password" name="pwd" placeholder="Password">
+                                    <a href=""><button type="submit" class="submit" name="submit">LOGIN</button></a>
                                 </form>
                             </div>
                         </div>
