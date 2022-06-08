@@ -62,14 +62,16 @@
                             <div><img src="/LibraryInformationMonitoringSystem/assets.img/closebutton.png" alt="X" class="close">
                             </div>
                             <div class="loginText">
-                                <input type="text" placeholder="Username">
-                                <input type="password" placeholder="Password">
-                                <a href="#" class="subButton">SUBMIT</a>
+                                <form action="php.functions/login.inc.php" method="POST">
+                                    <input type="text" name="uid" placeholder="Username">
+                                    <input type="password" iname="pwd" placeholder="Password">
+                                    <button type="submit" class="submit" name="submit">LOGIN</button>
+                                </form>
                             </div>
                         </div>
                     </div>
+                    <div class="overlay"></div>
                 </div>
-                <!--Borrow to be hidden behind login requirements-->
                 <div class="Wrapper">
                     <div class="Borrow Form Header">
                         borrow form head
@@ -77,17 +79,25 @@
                     <div class="Borrow Form">
                         borrow form
                     </div>
-                </div>
-                <div class="Footer">
                     <a href="../LibraryInformationMonitoringSystem/borrow.php" class="borrow">Borrow</a>
                     <a href="../LibraryInformationMonitoringSystem/registration.php" class="register">Register</a>
                 </div>
-
             </div>
-
+        </div>
+        <div class="Footer">
+            <div class="left-bar">
+                <div>
+                    ADD EXTRA INFO HERE/LINKS
+                </div>
+            </div>
+            <div class="right-bar">
+                <div>
+                    ADD EXTRA INFO/CONTACTS HERE
+                </div>
+            </div>
         </div>
     </div>
-    <script src="index.js"></script>
 </body>
+<script src="index.js"></script>
 
 </html>

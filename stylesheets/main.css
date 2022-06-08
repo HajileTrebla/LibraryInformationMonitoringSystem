@@ -196,7 +196,7 @@
     width: 100%;
     height: 100%;
     position: fixed;
-    top: 10em;
+    top: 5em;
     display: none;
     justify-content: center;
     align-items: center;
@@ -237,7 +237,7 @@ input{
     border: 1px solid gray;
 }
 
-.subButton{
+.submit {
     text-decoration: none;
     position: relative;
     left: 42%;
@@ -254,7 +254,7 @@ input{
     font-family: 'Inter', sans-serif;
 }
 
-.subButton:hover{
+button[name="submit"]:hover{
     background-color: black;
     border-radius: 0.7em;
 }

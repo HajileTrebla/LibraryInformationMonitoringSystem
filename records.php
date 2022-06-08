@@ -24,24 +24,6 @@
                 <div class="RightOptions">
                     <ul class="Menu">
                         <!--Login changes to Logout when logged into session, Inventory and Records are also hidden when logged out-->
-                        <li><button data-modal-targer="#login_modal" class="Button">Login</button></li>
-                        <div class="modal" id="login_modal">
-                            <div class="modal-header">
-                                <div class="title">login
-                                </div>
-                                <button data-close-button class="close-button">&times;</button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="sign-up-form">
-                                    <form action="php.functions/login.inc.php" method="POST">
-                                        <input type="text" name="name" placeholder="Username/Email...">
-                                        <input type="password" name="pwd" placeholder="Password...">
-                                        <button type="submit" name="submit">Log In</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="overlay"></div>
                         <li><a href="../LibraryInformationMonitoringSystem/about.php">About</a></li>
                         <li><a href="../LibraryInformationMonitoringSystem/inventory.php">Inventory</a></li>
                         <li><a href="../LibraryInformationMonitoringSystem/records.php">Records</a></li>
