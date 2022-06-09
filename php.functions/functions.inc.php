@@ -1,19 +1,4 @@
 <?php
-$dbStatement = "host=localhost ";
-$dbStatement .= "port=5432 ";
-$dbStatement .= "user=kinilaw ";
-$dbStatement .= "password=kinilaw ";
-$dbStatement .= "dbname=mmpnslibdb";
-
-
-
-$dbConn = pg_connect($dbStatement);
-
-if (!$dbConn) {
-    die("Connection failed: ");
-}
-
-
 function uidExists($dbConn, $username, $email)
 {
     $sql = "SELECT * FROM lib_users WHERE usersUid = $1 OR usersEmail = $2;";
@@ -70,9 +55,11 @@ function loginUser($dbConn, $username, $pwd)
 function getLatest($tablename, $option)
 {
     require_once 'dbh.inc.php';
-    $sql = "SELECT $option FROM $tablename DESC LIMIT 1";
+    $dbConn = getConn();
 
-    $result = pg_query($dbConn, $query);
+    $sql = "SELECT $option FROM $tablename ORDER BY $option DESC LIMIT 1";
+
+    $result = pg_query($dbConn, $sql);
     if (!$result) {
         exit;
     }
@@ -109,6 +96,8 @@ function generateId($idType)
 function generateLog($section_type, $log_desc)
 {
     require_once 'dbh.inc.php';
+
+    $dbConn = getConn();
 
     $sql = "INSERT
             INTO lib_global_log(section_type, log_desc)
