@@ -91,3 +91,18 @@ function generateId($idType)
     }
     return intval($generatedID);
 }
+
+function generateLog($section_type, $log_desc)
+{
+    require_once 'dbh.inc.php';
+
+    $sql = "INSERT
+            INTO lib_global_log(section_type, log_desc)
+            VALUES($1, $2)";
+
+    pg_prepare($dbConn, "generateLog", $sql);
+    pg_execute($dbConn, "generateLog", array($section_type, $log_desc));
+
+    $log = getLatest('lib_global_log', 'glogID');
+    return $log;
+}

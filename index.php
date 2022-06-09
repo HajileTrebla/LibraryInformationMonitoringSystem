@@ -78,7 +78,7 @@ session_start();
                                 <form action="php.functions/login.inc.php" method="POST">
                                     <input type="text" name="uid" placeholder="Username">
                                     <input type="password" name="pwd" placeholder="Password">
-                                    <a href=""><button type="submit" class="submit" name="submit">LOGIN</button></a>
+                                    <a href=""><button type="submit" class="submit" name="Login">LOGIN</button></a>
                                 </form>
                             </div>
                         </div>
