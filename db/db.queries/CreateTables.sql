@@ -2,23 +2,23 @@
 --to execute run "\i path" while in the database
 
 --TableReset REMOVE COMMENT TAGS WITH CAUTION AND ONLY WHEN A BACKUP UP TO DATE
---DROP TABLE IF EXISTS lib_transactions_status CASCADE;
---DROP TABLE IF EXISTS lib_transactions_penalties CASCADE;
---DROP TABLE IF EXISTS lib_visitors_details CASCADE;
---DROP TABLE IF EXISTS lib_inventory_changelog CASCADE;
---DROP TABLE IF EXISTS lib_visitors CASCADE;
---DROP TABLE IF EXISTS lib_transactions CASCADE;
---DROP TABLE IF EXISTS lib_faculty CASCADE;
---DROP TABLE IF EXISTS lib_students CASCADE;
---DROP TABLE IF EXISTS lib_users_log CASCADE;
---DROP TABLE IF EXISTS lib_master_list CASCADE;
---DROP TABLE IF EXISTS lib_inventory CASCADE;
---DROP TABLE IF EXISTS lib_transactions_request CASCADE;
---DROP TABLE IF EXISTS lib_inventory_authors CASCADE;
---DROP TABLE IF EXISTS lib_inventory_subjects CASCADE;
---DROP TABLE IF EXISTS lib_inventory_subjects_category CASCADE;;
---DROP TABLE IF EXISTS lib_global_log CASCADE;
---DROP TABLE IF EXISTS lib_users CASCADE;
+DROP TABLE IF EXISTS lib_transactions_status CASCADE;
+DROP TABLE IF EXISTS lib_transactions_penalties CASCADE;
+DROP TABLE IF EXISTS lib_visitors_details CASCADE;
+DROP TABLE IF EXISTS lib_inventory_changelog CASCADE;
+DROP TABLE IF EXISTS lib_visitors CASCADE;
+DROP TABLE IF EXISTS lib_transactions CASCADE;
+DROP TABLE IF EXISTS lib_faculty CASCADE;
+DROP TABLE IF EXISTS lib_students CASCADE;
+DROP TABLE IF EXISTS lib_users_log CASCADE;
+DROP TABLE IF EXISTS lib_master_list CASCADE;
+DROP TABLE IF EXISTS lib_inventory CASCADE;
+DROP TABLE IF EXISTS lib_transactions_request CASCADE;
+DROP TABLE IF EXISTS lib_inventory_authors CASCADE;
+DROP TABLE IF EXISTS lib_inventory_subjects CASCADE;
+DROP TABLE IF EXISTS lib_inventory_subjects_category CASCADE;;
+DROP TABLE IF EXISTS lib_global_log CASCADE;
+DROP TABLE IF EXISTS lib_users CASCADE;
 
 --Group 1
 --TableCreation for Login and admin use-case
@@ -36,7 +36,7 @@ CREATE TABLE lib_global_log(
     glogID BIGSERIAL NOT NULL PRIMARY KEY,
     section_type INT,
     log_desc TEXT,
-    date_time TIMESTAMP
+    date_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL 
 );
 
 --Create Subject Category Table
@@ -65,7 +65,7 @@ CREATE TABLE lib_inventory_subjects(
 CREATE TABLE lib_transactions_request(
     requestID BIGSERIAL NOT NULL PRIMARY KEY,
     request_status VARCHAR(5) NOT NULL,
-    dateProcessed TIMESTAMP,
+    dateProcessed TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
     logID BIGINT NOT NULL,
     CONSTRAINT fk_logID FOREIGN KEY(logID) REFERENCES lib_global_log(glogID)
 );
@@ -153,7 +153,7 @@ CREATE TABLE lib_inventory_changelog(
 --Create Visitor Details
 CREATE TABLE lib_visitors_details(
     visitorID BIGINT NOT NULL,
-    teacherInCharge TEXT,
+    teacherInCharge VARCHAR,
     timeIn TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
     timeOut TIMESTAMP,
     CONSTRAINT fk_visitorID FOREIGN KEY(visitorID) REFERENCES lib_visitors(visitorID)
@@ -163,7 +163,7 @@ CREATE TABLE lib_visitors_details(
 CREATE TABLE lib_transactions_penalties(
     transactionID BIGINT NOT NULL,
     penaltyFee INT NOT NULL,
-    datePayed TIMESTAMP,
+    datePayed TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
     status VARCHAR(5) NOT NULL,
     logID BIGINT NOT NULL,
     CONSTRAINT fk_logID FOREIGN KEY(logID) REFERENCES lib_global_log(glogID),
@@ -174,7 +174,7 @@ CREATE TABLE lib_transactions_penalties(
 CREATE TABLE lib_transactions_status(
     transactionID BIGINT NOT NULL,
     status VARCHAR(5) NOT NULL,
-    dateReturned TIMESTAMP,
+    dateReturned TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
     logID BIGINT NOT NULL,
     CONSTRAINT fk_logID FOREIGN KEY(logID) REFERENCES lib_global_log(glogID),
     CONSTRAINT fk_transactionID FOREIGN KEY(transactionID) REFERENCES lib_transactions(transactionID)
