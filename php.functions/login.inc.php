@@ -21,20 +21,20 @@ if (isset($_POST["Login"])) {
 
     loginUser($dbConn, $username, $pwd);
 
-    $log_desc = "$uid Login at $date";
-    $log = generateLog($section_type, $log_desc);
+    #$log_desc = "$username Login at $date";
+    #$log = generateLog($section_type, $log_desc);
 
-    $sql = "INSERT 
-            INTO lib_users_log(usersID, state_type, logID)
-            VALUES($1, $2, $3)";
+    #$sql = "INSERT 
+    #        INTO lib_users_log(usersID, state_type, logID)
+    #        VALUES($1, $2, $3)";
 
-    if (!pg_send_query($dbConn, "", $sql)) {
-        header("Location: ../index.php?error=stmtfailed");
-        exit();
-    }
+    #if (!pg_send_query($dbConn, "", $sql)) {
+    #    header("Location: ../index.php?error=stmtfailed");
+    #    exit();
+    #}
 
-    pg_prepare($dbconn, "log-user", $sql);
-    pg_execute($dbconn, "log-user", array($userid, $state_type, $log));
+    #pg_prepare($dbconn, "log-user", $sql);
+    #pg_execute($dbconn, "log-user", array($userid, $state_type, $log));
 } else {
     header("Location: ../index.php");
     exit();
