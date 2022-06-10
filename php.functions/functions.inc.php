@@ -46,7 +46,7 @@ function loginUser($dbConn, $username, $pwd)
         exit();
     } else if ($checkPwd === true) {
         session_start();
-        $_SESSION["userid"] = $uidExists[1];
+        $_SESSION["userid"] = $uidExists[0];
         $_SESSION["useruid"] = $uidExists[3];
         header("Location: ../index.php?loggedin");
     }
@@ -57,7 +57,7 @@ function getLatest($tablename, $option)
     require_once 'dbh.inc.php';
     $dbConn = getConn();
 
-    $sql = "SELECT $option FROM $tablename ORDER BY $option DESC LIMIT 1";
+    $sql = "SELECT $option FROM $tablename ORDER BY $option DESC FETCH FIRST ROW ONLY";
 
     $result = pg_query($dbConn, $sql);
     if (!$result) {
@@ -106,6 +106,6 @@ function generateLog($section_type, $log_desc)
     pg_prepare($dbConn, "generateLog", $sql);
     pg_execute($dbConn, "generateLog", array($section_type, $log_desc));
 
-    $log = getLatest('lib_global_log', 'glogID');
-    return $log;
+    $log = getLatest('lib_global_log', 'glogid');
+    return $log[0];
 }

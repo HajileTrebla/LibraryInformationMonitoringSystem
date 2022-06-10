@@ -1,10 +1,11 @@
 <?php
 
-$section_type = 1;
-$state_type = "LogIn";
-$date = date("Y-m-d H:i:s a");
 
 if (isset($_POST["Login"])) {
+
+    $section_type = 1;
+    $state_type = "LogIn";
+    $date = date("Y-m-d H:i:s a T");
 
     $username = $_POST["uid"];
     $pwd = $_POST["pwd"];
@@ -20,21 +21,17 @@ if (isset($_POST["Login"])) {
     }
 
     loginUser($dbConn, $username, $pwd);
+    $userid = $_SESSION["userid"];
 
     $log_desc = "$username Login at $date";
     $log = generateLog($section_type, $log_desc);
 
-    $sql = "INSERT 
-            INTO lib_users_log(usersID, state_type, logID)
+    $sqlul = "INSERT 
+            INTO lib_users_log(usersid, state_type, logid)
             VALUES($1, $2, $3)";
 
-    if (!pg_send_query($dbConn, $sql)) {
-        header("Location: ../index.php?error=stmtfailed");
-        exit();
-    }
-
-    pg_prepare($dbconn, "log-user", $sql);
-    pg_execute($dbconn, "log-user", array($userid, $state_type, $log));
+    pg_prepare($dbConn, "log-user", $sqlul);
+    pg_execute($dbConn, "log-user", array($userid, $state_type, $log));
 } else {
     header("Location: ../index.php");
     exit();
