@@ -12,7 +12,7 @@
     max-width: 120%;
     max-height: 50%;
     background-size: cover;
-    position: absolute;
+   position: absolute;
     margin-top: 11.6em;
     background-attachment: fixed;
 }
@@ -300,4 +300,12 @@ button[name="submit"]:hover{
 
 .borrow:hover{
     background: black;
+}
+
+.mainText {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2em;
+}
+
+.mainText .line2 {
 }

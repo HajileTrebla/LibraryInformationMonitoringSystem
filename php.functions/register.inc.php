@@ -1,10 +1,8 @@
 <?php
 
-#section type for global log
-$section_type = 2;
-
 if (isset($_POST["register-student"])) {
 
+    $section_type = 2;
     $idtype = 10;
     $fname = $_POST["fname"];
     $lname = $_POST["lname"];
@@ -44,8 +42,8 @@ if (isset($_POST["register-student"])) {
         exit();
     }
 
-    pg_prepare($dbconn, "regisration-master", $sql1);
-    pg_execute($dbconn, "regisration-master", array($id, $idtype, $log));
+    pg_prepare($dbConn, "regisration-master", $sql1);
+    pg_execute($dbConn, "regisration-master", array($id, $idtype, $log));
 
     $sql2 = "INSERT 
             INTO lib_students(studentID , fistName, lastName, section, yearLevel) 
@@ -55,12 +53,13 @@ if (isset($_POST["register-student"])) {
         header("Location: ../index.php?error=stmtfailed");
         exit();
     }
-    pg_prepare($dbconn, "regisration", $sql2);
-    pg_execute($dbconn, "regisration", array($id, $fname, $lname, $sec, $glvl));
+    pg_prepare($dbConn, "regisration", $sql2);
+    pg_execute($dbConn, "regisration", array($id, $fname, $lname, $sec, $glvl));
 }
 
 if (isset($_POST["register-faculty"])) {
 
+    $section_type = 2;
     $idtype = 11;
     $fname = $_POST["fname"];
     $lname = $_POST["lname"];
@@ -94,8 +93,8 @@ if (isset($_POST["register-faculty"])) {
         exit();
     }
 
-    pg_prepare($dbconn, "regisration-master", $sql1);
-    pg_execute($dbconn, "regisration-master", array($id, $idtype, $log));
+    pg_prepare($dbConn, "regisration-master", $sql1);
+    pg_execute($dbConn, "regisration-master", array($id, $idtype, $log));
 
     $sql2 = "INSERT 
             INTO lib_students(facultyID, fistName, lastName, position) 
