@@ -2,23 +2,23 @@
 --to execute run "\i path" while in the database
 
 --TableReset REMOVE COMMENT TAGS WITH CAUTION AND ONLY WHEN A BACKUP UP TO DATE
---DROP TABLE IF EXISTS lib_transactions_status CASCADE;
---DROP TABLE IF EXISTS lib_transactions_penalties CASCADE;
---DROP TABLE IF EXISTS lib_visitors_details CASCADE;
---DROP TABLE IF EXISTS lib_inventory_changelog CASCADE;
---DROP TABLE IF EXISTS lib_visitors CASCADE;
---DROP TABLE IF EXISTS lib_transactions CASCADE;
---DROP TABLE IF EXISTS lib_faculty CASCADE;
---DROP TABLE IF EXISTS lib_students CASCADE;
---DROP TABLE IF EXISTS lib_users_log CASCADE;
---DROP TABLE IF EXISTS lib_master_list CASCADE;
---DROP TABLE IF EXISTS lib_inventory CASCADE;
---DROP TABLE IF EXISTS lib_transactions_request CASCADE;
---DROP TABLE IF EXISTS lib_inventory_authors CASCADE;
---DROP TABLE IF EXISTS lib_inventory_subjects CASCADE;
---DROP TABLE IF EXISTS lib_inventory_subjects_category CASCADE;;
---DROP TABLE IF EXISTS lib_global_log CASCADE;
---DROP TABLE IF EXISTS lib_users CASCADE;
+DROP TABLE IF EXISTS lib_transactions_status CASCADE;
+DROP TABLE IF EXISTS lib_transactions_penalties CASCADE;
+DROP TABLE IF EXISTS lib_visitors_details CASCADE;
+DROP TABLE IF EXISTS lib_inventory_changelog CASCADE;
+DROP TABLE IF EXISTS lib_visitors CASCADE;
+DROP TABLE IF EXISTS lib_transactions CASCADE;
+DROP TABLE IF EXISTS lib_faculty CASCADE;
+DROP TABLE IF EXISTS lib_students CASCADE;
+DROP TABLE IF EXISTS lib_users_log CASCADE;
+DROP TABLE IF EXISTS lib_master_list CASCADE;
+DROP TABLE IF EXISTS lib_inventory CASCADE;
+DROP TABLE IF EXISTS lib_transactions_request CASCADE;
+DROP TABLE IF EXISTS lib_inventory_authors CASCADE;
+DROP TABLE IF EXISTS lib_inventory_subjects CASCADE;
+DROP TABLE IF EXISTS lib_inventory_subjects_category CASCADE;;
+DROP TABLE IF EXISTS lib_global_log CASCADE;
+DROP TABLE IF EXISTS lib_users CASCADE;
 
 --Group 1
 --TableCreation for Login and admin use-case
@@ -48,15 +48,15 @@ CREATE TABLE lib_inventory_subjects_category(
 --Create Author Table
 CREATE TABLE lib_inventory_authors(
     authorID BIGSERIAL NOT NULL PRIMARY KEY,
-    firstName VARCHAR(50) NOT NULL,
-    lastName VARCHAR(50) NOT NULL
+    firstName VARCHAR(100) NOT NULL,
+    lastName VARCHAR(50)
 );
 
 --Create Subject Table
 CREATE TABLE lib_inventory_subjects(
     subjectID BIGSERIAL NOT NULL PRIMARY KEY,
     categID BIGINT NOT NULL,
-    subjectName VARCHAR(50) NOT NULl,
+    subjectName VARCHAR(120) NOT NULl,
     CONSTRAINT fk_categID FOREIGN KEY(categID) REFERENCES lib_inventory_subjects_category(categID)
 );
 
@@ -73,10 +73,10 @@ CREATE TABLE lib_transactions_request(
 --Create Inventory Details
 CREATE TABLE lib_inventory(
     resourceID BIGSERIAL NOT NULL PRIMARY KEY,
-    bookTitle VARCHAR(50) NOT NULL,
+    bookTitle VARCHAR(300) NOT NULL,
     authorID BIGSERIAL NOT NULL,
     subjectID BIGSERIAL NOT NULL,
-    quantity INT NOT NULL,
+    quantity INT,
     CONSTRAINT fk_authorID FOREIGN KEY(authorID) REFERENCES lib_inventory_authors(authorID),
     CONSTRAINT fk_subjectID FOREIGN KEY(subjectID) REFERENCES lib_inventory_subjects(subjectID)
 );
