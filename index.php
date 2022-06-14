@@ -86,29 +86,33 @@ session_start();
                     <div class="overlay"></div>
                 </div>
                 <div class="Wrapper">
-                    <div class="Register" id="registrationForm">
-                        <div class="registerForm">
-                            <div class="registerHeader">
-                                <div class="registerHeaderText">REGISTRATION FORM</div>
+                    <div class="Register1" id="registrationForm">
+                        <div class="registerForm1">
+                            <div class="registerHeader1">
+                                <div class="registerHeaderText">REGISTRATION FORM - STUDENT</div>
                             </div>
-                            <div class="registerBody">
+                            <div class="registerBody1">
                                 <form action="php.functions/register.inc.php" method="POST">
                                     <input type="text" name="fname" placeholder="first-name">
                                     <input type="text" name="lname" placeholder="last-name">
                                     <input type="text" name="sec" placeholder="Section">
                                     <input type="text" name="glvl" placeholder="Year">
-                                    <a href=""><button type="submit" class="registerButton" name="register-student">REGISTER</button></a>
+                                    <a href=""><button type="submit" class="registerButton1" name="register-student">REGISTER</button></a>
                                 </form>
                             </div>
-                            <div class="registerHeader">
-                                <div class="registerHeaderText">REGISTRATION FORM</div>
+                        </div>
+                    </div>
+                    <div class="Register2" id="registrationForm">
+                        <div class="registerForm2">
+                            <div class="registerHeader2">
+                                <div class="registerHeaderText">REGISTRATION FORM - FACULTY</div>
                             </div>
-                            <div class="registerBody">
+                            <div class="registerBody2">
                                 <form action="php.functions/register.inc.php" method="POST">
                                     <input type="text" name="fname" placeholder="first-name">
                                     <input type="text" name="lname" placeholder="last-name">
                                     <input type="text" name="facpos" placeholder="faculty-position">
-                                    <a href=""><button type="submit" class="registerButton" name="register-faculty">REGISTER</button></a>
+                                    <a href=""><button type="submit" class="registerButton2" name="register-faculty">REGISTER</button></a>
                                 </form>
                             </div>
                         </div>

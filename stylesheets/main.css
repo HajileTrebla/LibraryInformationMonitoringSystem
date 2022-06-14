@@ -310,16 +310,7 @@ input{
 .mainText .line2 {
 }
 
-.registerHeader{
-    position: relative;
-    right: 2em;
-    bottom: 1.3em;
-    width: 91.05em;
-    height: 117px;
 
-    background: #100B0B;
-    border-bottom: 7px solid #2C7A56;
-}
 
 .registerHeaderText{
     position: relative;
@@ -332,42 +323,97 @@ input{
 }
 
 
-.Register{
+.Register1{
     background: (0, 0, 0, 0.6);
     width: 100%;
     height: 100%;
     position: relative;
-    top: 40em;
+    top: 43.74em;
+    right: 20em;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.registerForm{
-    height: 100%;
-    width: 87.8em;
+
+.registerHeader1{
+    position: relative;
+    right: 2em;
+    bottom: 1.3em;
+    width: 47em;
+    height: 117px;
+
+    background: #100B0B;
+    border-bottom: 7px solid #2C7A56;
+}
+
+.registerForm1{
+    height: 32.1em;
+    width: 43.7em;
     background: white;
     padding: 20px;
     border-radius: 5px;
     position: relative;
-    right: 0.7em;
-    bottom: 8em;
+    right: 1.4em;
+    border: solid 1px;
 }
 
-.registerBody{
+.registerBody1{
     margin: 20px auto;
     display: block;
-    width: 60em;
+    width: 40em;
     position: relative;
-    top: 2.2em;
+    top: 1.6em;
     padding: 8px;
 }
 
-.registerButton{
+.Register2{
+    background: (0, 0, 0, 0.6);
+    height: 100%;
+    width: 47%;
+    position: relative;
+    top: 9.11em;
+    left: 46.1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registerHeader2{
+    position: relative;
+    right: 1.3em;
+    bottom: 1.4em;
+    width: 43.8em;
+    height: 117px;
+
+    background: #100B0B;
+    border-bottom: 7px solid #2C7A56;
+}
+
+.registerForm2{
+    height: 32em;
+    width: 41.2em;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    border: solid 1px;
+}
+
+.registerBody2{
+    margin: 20px auto;
+    display: block;
+    width: 40em;
+    position: relative;
+    top: 2.7em;
+    padding: 8px;
+}
+
+.registerButton1{
     text-decoration: none;
     position: relative;
     text-align: center;
-    left: 45.3%;
-    top: 5.5em;
+    left: 42%;
+    top: 3.2em;
     font-weight: 400;
     font-size: 15px;
     display: block;
@@ -375,15 +421,38 @@ input{
     background: #2C7A56;
     border-radius: 1.4em;
     padding: 0.6em;
-    width: 5.4em;
+    width: 6.3em;
     color: white;
     font-family: 'Inter', sans-serif;
 }
 
-.registerButton:hover{
+.registerButton2{
+    text-decoration: none;
+    position: relative;
+    text-align: center;
+    left: 42%;
+    top: 5em;
+    font-weight: 400;
+    font-size: 15px;
+    display: block;
+    text-align: center;
+    background: #2C7A56;
+    border-radius: 1.4em;
+    padding: 0.6em;
+    width: 6.3em;
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+.registerButton1:hover{
      background: black;
      border-color: #2C7A56;
      border: 1em;
 }
 
+.registerButton2:hover{
+     background: black;
+     border-color: #2C7A56;
+     border: 1em;
+}
 
