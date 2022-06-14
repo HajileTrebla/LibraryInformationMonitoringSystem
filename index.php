@@ -92,9 +92,24 @@ session_start();
                                 <div class="registerHeaderText">REGISTRATION FORM</div>
                             </div>
                             <div class="registerBody">
-                                <input type="text" placeholder="Name">
-                                <input type="text" placeholder="Grade & Section" </div>
-                                <a href=""><button type="submit" class="registerButton" name="Login">SUBMIT</button></a>
+                                <form action="php.functions/register.inc.php" method="POST">
+                                    <input type="text" name="fname" placeholder="first-name">
+                                    <input type="text" name="lname" placeholder="last-name">
+                                    <input type="text" name="sec" placeholder="Section">
+                                    <input type="text" name="glvl" placeholder="Year">
+                                    <a href=""><button type="submit" class="registerButton" name="register-student">REGISTER</button></a>
+                                </form>
+                            </div>
+                            <div class="registerHeader">
+                                <div class="registerHeaderText">REGISTRATION FORM</div>
+                            </div>
+                            <div class="registerBody">
+                                <form action="php.functions/register.inc.php" method="POST">
+                                    <input type="text" name="fname" placeholder="first-name">
+                                    <input type="text" name="lname" placeholder="last-name">
+                                    <input type="text" name="facpos" placeholder="faculty-position">
+                                    <a href=""><button type="submit" class="registerButton" name="register-faculty">REGISTER</button></a>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -103,7 +118,7 @@ session_start();
                     <div class="Borrow Form">
                     </div>
                     <button type="button" class="borrow" id="borrow">Borrow</button>
-                    <button type="button" class="register" id="register">Register</button>
+                    <a href="#Register"><button type="button" class="register" id="register">Register</button></a>
                 </div>
             </div>
 

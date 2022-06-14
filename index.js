@@ -19,7 +19,7 @@ const register = document.querySelector("#register");
 
 register.addEventListener("click", function(){
     window.scrollTo({
-        top: 962,
+        top: 1260,
         left: 0,
         behavior: "smooth"
     });
