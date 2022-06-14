@@ -105,13 +105,13 @@ session_start();
                     <div class="Register2" id="registrationForm">
                         <div class="registerForm2">
                             <div class="registerHeader2">
-                                <div class="registerHeaderText">REGISTRATION FORM - FACULTY</div>
+                                <div class="registerHeaderText">REGISTRATION FORM - STAFF</div>
                             </div>
                             <div class="registerBody2">
                                 <form action="php.functions/register.inc.php" method="POST">
                                     <input type="text" name="fname" placeholder="first-name">
                                     <input type="text" name="lname" placeholder="last-name">
-                                    <input type="text" name="facpos" placeholder="faculty-position">
+                                    <input type="text" name="facpos" placeholder="position">
                                     <a href=""><button type="submit" class="registerButton2" name="register-faculty">REGISTER</button></a>
                                 </form>
                             </div>
