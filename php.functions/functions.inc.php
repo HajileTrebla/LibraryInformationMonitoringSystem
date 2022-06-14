@@ -83,7 +83,7 @@ function generateId($idType)
             $generatedID = "10$year" . "01";
         }
     } else if ($idType == 11) {
-        $latestyear_f = str_split($latestyear_f, 2)[1];
+        $latestyear_f = str_split($latestid_f, 2)[1];
         if ($latestyear_f === $year) {
             $generatedID = $latestid_f + 1;
         } else if (($latestyear_f != $year) || (!$latestid_f)) {
