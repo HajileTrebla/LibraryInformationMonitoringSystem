@@ -72,12 +72,14 @@ CREATE TABLE lib_transactions_request(
 
 --Create Inventory Details
 CREATE TABLE lib_inventory(
-    resourceID BIGSERIAL NOT NULL PRIMARY KEY,
+    resourceID BIGINT NOT NULL PRIMARY KEY,
     bookTitle VARCHAR(300) NOT NULL,
-    authorID BIGSERIAL NOT NULL,
-    subjectID BIGSERIAL NOT NULL,
+    authorID BIGINT NOT NULL,
+    altauthorID BIGINT,
+    subjectID BIGINT NOT NULL,
     quantity INT,
     CONSTRAINT fk_authorID FOREIGN KEY(authorID) REFERENCES lib_inventory_authors(authorID),
+    CONSTRAINT fk_altauthorID FOREIGN KEY(altauthorID) REFERENCES lib_inventory_authors(authorID),
     CONSTRAINT fk_subjectID FOREIGN KEY(subjectID) REFERENCES lib_inventory_subjects(subjectID)
 );
 
@@ -189,3 +191,5 @@ INSERT INTO lib_users(
 VALUES(
     'Admin', 'Admin', 'Admin', '1234'
 );
+
+

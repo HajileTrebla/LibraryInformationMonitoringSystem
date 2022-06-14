@@ -68,7 +68,8 @@ if (!isset($_SESSION["useruid"])) {
                         Library Inventory
                     </div>
                 </div>
-                <div class="Wrapper">
+                <div class="select-area">
+
                 </div>
             </div>
         </div>
