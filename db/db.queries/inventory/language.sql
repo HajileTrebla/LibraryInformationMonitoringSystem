@@ -201,7 +201,7 @@ INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
     VALUES(03528, 'Florante at Laura',80,31,1);--248
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(04392, 'Mga Bayaning Pilipino',81,31,1);--249
+    VALUES(04392, 'Mga Bayaning Pilipino',81,31,2);--249
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
     VALUES(001616, 'Mga Dakilang Lider na Pilipino',82,31,1);--250
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
@@ -221,8 +221,6 @@ INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
     VALUES(00873, 'Gabay sa Panitikang Filipino',88,31,1);--258
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(00211, 'Mga Bayaning Pilipino',89,31,1);--259
-INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
     VALUES(00231, 'Mga Kaisipan ni Dr. Jose P. Rizal',90,31,1);--260
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
     VALUES(00321, 'Mga Sala-Salawikain',91,31,1);--261
@@ -231,5 +229,5 @@ INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
 
 -- Maikling Komposisyon inventory
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(00197, 'Mga Katutubong Pabula May Ginintuang Aral',93,32,4);--263
+    VALUES(00197, 'Sanayang Aklat sa Pagsusulat ng Komposisyong maanyo at di-maanyo',93,32,4);--263
 

@@ -42,7 +42,7 @@ CREATE TABLE lib_global_log(
 --Create Subject Category Table
 CREATE TABLE lib_inventory_subjects_category(
     categID BIGSERIAL NOT NULL PRIMARY KEY,
-    categName VARCHAR(50) NOT NULL
+    categName VARCHAR(50) NOT NULL UNIQUE
 );
 
 --Create Author Table
@@ -56,7 +56,7 @@ CREATE TABLE lib_inventory_authors(
 CREATE TABLE lib_inventory_subjects(
     subjectID BIGSERIAL NOT NULL PRIMARY KEY,
     categID BIGINT NOT NULL,
-    subjectName VARCHAR(120) NOT NULl,
+    subjectName VARCHAR(120) NOT NULl UNIQUE,
     CONSTRAINT fk_categID FOREIGN KEY(categID) REFERENCES lib_inventory_subjects_category(categID)
 );
 
@@ -66,14 +66,14 @@ CREATE TABLE lib_transactions_request(
     requestID BIGSERIAL NOT NULL PRIMARY KEY,
     request_status VARCHAR(5) NOT NULL,
     dateProcessed TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
-    logID BIGINT NOT NULL,
+    logID BIGINT NOT NULL UNIQUE,
     CONSTRAINT fk_logID FOREIGN KEY(logID) REFERENCES lib_global_log(glogID)
 );
 
 --Create Inventory Details
 CREATE TABLE lib_inventory(
     resourceID BIGINT NOT NULL PRIMARY KEY,
-    bookTitle VARCHAR(300) NOT NULL,
+    bookTitle VARCHAR(300) NOT NULL UNIQUE,
     authorID BIGINT NOT NULL,
     altauthorID BIGINT,
     subjectID BIGINT NOT NULL,
@@ -87,7 +87,7 @@ CREATE TABLE lib_inventory(
 CREATE TABLE lib_users_log(
     usersID BIGINT NOT NULL,
     state_type VARCHAR NOT NULL,
-    logID BIGINT NOT NULL,
+    logID BIGINT NOT NULL UNIQUE,
     Date_logged TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
     CONSTRAINT fk_userID FOREIGN KEY(usersID) REFERENCES lib_users(usersID),
     CONSTRAINT fk_logID FOREIGN KEY(logID) REFERENCES lib_global_log(glogID)
@@ -98,14 +98,14 @@ CREATE TABLE lib_master_list(
     referenceID BIGINT NOT NULL PRIMARY KEY,
     idType INT,
     Date_Created TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
-    logID BIGINT NOT NULL,
+    logID BIGINT NOT NULL UNIQUE,
     CONSTRAINT fk_logID FOREIGN KEY(logID) REFERENCES lib_global_log(glogID)
 );
 
 --Group 3 
 --Create Registered Students Table
 CREATE TABLE lib_students(
-    studentID BIGINT NOT NULL,
+    studentID BIGINT NOT NULL UNIQUE,
     firstName VARCHAR(50) NOT NULL,
     lastName VARCHAR(50) NOT NULL,
     section VARCHAR(15),
@@ -115,7 +115,7 @@ CREATE TABLE lib_students(
 
 --Create Registered Faculty Table
 CREATE TABLE lib_faculty(
-    facultyID BIGINT NOT NULL,
+    facultyID BIGINT NOT NULL UNIQUE,
     firstName VARCHAR(50) NOT NULL,
     lastName VARCHAR(50) NOT NULL,
     position TEXT,
@@ -129,7 +129,7 @@ CREATE TABLE lib_transactions(
     dateDue TIMESTAMP,
     resourceID BIGINT NOT NULL, 
     processDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
-    logID BIGINT NOT NULL,
+    logID BIGINT NOT NULL UNIQUE,
     CONSTRAINT fk_logID FOREIGN KEY(logID) REFERENCES lib_global_log(glogID),
     CONSTRAINT fk_borrowerID FOREIGN KEY(borrowerID) REFERENCES lib_master_list(referenceID),
     CONSTRAINT fk_resourceID FOREIGN KEY(resourceID) REFERENCES lib_inventory(resourceID)
@@ -137,18 +137,18 @@ CREATE TABLE lib_transactions(
 
 --Create Visitors Table
 CREATE TABLE lib_visitors(
-    visitorID BIGSERIAL NOT NULL PRIMARY KEY ,
+    visitorID BIGSERIAL NOT NULL PRIMARY KEY,
     firstName VARCHAR(50),
     lastName VARCHAR(50),
     referenceID BIGINT NOT NULL,
-    logID BIGINT NOT NULL,
+    logID BIGINT NOT NULL UNIQUE,
     CONSTRAINT fk_logID FOREIGN KEY(logID) REFERENCES lib_global_log(glogID),
     CONSTRAINT fk_referenceID FOREIGN KEY(referenceID) REFERENCES lib_master_list(referenceID)
 );
 
 --Create Inventory Log
 CREATE TABLE lib_inventory_changelog(
-    logID BIGINT NOT NULL,
+    logID BIGINT NOT NULL UNIQUE,
     resourceID BIGINT NOT NULL, 
     CONSTRAINT fk_logID FOREIGN KEY(logID) REFERENCES lib_global_log(glogID),
     CONSTRAINT fk_resourceID FOREIGN KEY(resourceID) REFERENCES lib_inventory(resourceID)
@@ -157,7 +157,7 @@ CREATE TABLE lib_inventory_changelog(
 --Group 4
 --Create Visitor Details
 CREATE TABLE lib_visitors_details(
-    visitorID BIGINT NOT NULL,
+    visitorID BIGINT NOT NULL UNIQUE,
     teacherInCharge VARCHAR,
     timeIn TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
     timeOut TIMESTAMP,
@@ -170,7 +170,7 @@ CREATE TABLE lib_transactions_penalties(
     penaltyFee INT NOT NULL,
     datePayed TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
     status VARCHAR(5) NOT NULL,
-    logID BIGINT NOT NULL,
+    logID BIGINT NOT NULL UNIQUE,
     CONSTRAINT fk_logID FOREIGN KEY(logID) REFERENCES lib_global_log(glogID),
     CONSTRAINT fk_transactionID FOREIGN KEY(transactionID) REFERENCES lib_transactions(transactionID)
 );
@@ -179,8 +179,8 @@ CREATE TABLE lib_transactions_penalties(
 CREATE TABLE lib_transactions_status(
     transactionID BIGINT NOT NULL,
     status VARCHAR(5) NOT NULL,
-    dateReturned TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
-    logID BIGINT NOT NULL,
+    dateReturned TIMESTAMP,
+    logID BIGINT NOT NULL UNIQUE,
     CONSTRAINT fk_logID FOREIGN KEY(logID) REFERENCES lib_global_log(glogID),
     CONSTRAINT fk_transactionID FOREIGN KEY(transactionID) REFERENCES lib_transactions(transactionID)
 );

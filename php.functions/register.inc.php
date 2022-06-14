@@ -28,9 +28,8 @@ if (isset($_POST["register-student"])) {
     }
 
     #registration
-    $log_desc = "Registered Student $lname , $fname with id $id";
-
     $id = generateId($idtype);
+    $log_desc = "Registered Student $lname , $fname with id $id";
     $log = generateLog($section_type, $log_desc);
 
     $sql1 = "INSERT 
@@ -46,7 +45,7 @@ if (isset($_POST["register-student"])) {
     pg_execute($dbConn, "regisration-master", array($id, $idtype, $log));
 
     $sql2 = "INSERT 
-            INTO lib_students(studentID , fistName, lastName, section, yearLevel) 
+            INTO lib_students(studentID , firstName, lastName, section, yearLevel) 
             VALUES($1, $2, $3, $4, $5)";
 
     if (!pg_send_query($dbConn, $sql2)) {
@@ -79,9 +78,8 @@ if (isset($_POST["register-faculty"])) {
         exit();
     }
 
-    $log_desc = "Registered Faculty $lname , $fname with id $id";
-
     $id = generateId($idtype);
+    $log_desc = "Registered Faculty $lname , $fname with id $id";
     $log = generateLog($section_type, $log_desc);
 
     $sql1 = "INSERT 
@@ -97,7 +95,7 @@ if (isset($_POST["register-faculty"])) {
     pg_execute($dbConn, "regisration-master", array($id, $idtype, $log));
 
     $sql2 = "INSERT 
-            INTO lib_students(facultyID, fistName, lastName, position) 
+            INTO lib_faculty(facultyID, firstName, lastName, position) 
             VALUES($1, $2, $3, $4)";
 
     if (!pg_send_query($dbConn, $sql2)) {

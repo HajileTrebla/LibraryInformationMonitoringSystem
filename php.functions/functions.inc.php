@@ -72,8 +72,10 @@ function generateId($idType)
 {
     require_once 'dbh.inc.php';
     $year = str_split(date("Y"), 2)[1];
-    $latestid_s = strval(getLatest('lib_students', 'studentID'));
-    $latestid_f = strval(getLatest('lib_faculty', 'facultyID'));
+    $latestid_s = strval(getLatest('lib_students', 'studentID')[0]);
+    $latestid_f = strval(getLatest('lib_faculty', 'facultyID')[0]);
+    echo "<script>console.log($latestid_s);</script>";
+    echo "<script>console.log($latestid_f);</script>";
 
     if ($idType == 10) {
         $latestyear_s = str_split($latestid_s, 2)[1];

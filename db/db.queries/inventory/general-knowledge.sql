@@ -238,25 +238,15 @@ INSERT INTO lib_inventory_authors(firstName, lastName)
 --dictionary inventory
 
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(028256, 'Webster’s Third New International Dictionary',1,1,1);--1
+    VALUES(028256, 'Webster’s Third New International Dictionary',1,1,2);--1
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(000274, 'Webster’s Third New International Dictionary',1,1,1);--2
+    VALUES(000387, 'Webster Comprehensive Dictionary',2,1,2);--3
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(000387, 'Webster Comprehensive Dictionary',2,1,1);--3
+    VALUES(000389, 'VOLUME 1 The New Lexicon Webster Dictionary of the English Language',3,1,2);--5
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(000388, 'Webster Comprehensive Dictionary ',2,1,1);--4
+    VALUES(000390, 'VOLUME 2 The New Lexicon Webster Dictionary of the English Language',3,1,2);--6
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(000389, 'VOLUME 1 The New Lexicon Webster Dictionary of the English Language',3,1,1);--5
-INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(000390, 'VOLUME 2 The New Lexicon Webster Dictionary of the English Language',3,1,1);--6
-INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(000047, 'VOLUME 1 The New Lexicon Webster Dictionary of the English Language',3,1,1);--7
-INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(000048, 'VOLUME 2 The New Lexicon Webster Dictionary of the English Language',3,1,1);--8
-INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(024, 'English-Filipino Filipino-English Dictionary',4,1,1);--9
-INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(025, 'English-Filipino Filipino-English Dictionary',4,1,1);--10
+    VALUES(024, 'English-Filipino Filipino-English Dictionary',4,1,2);--9
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
     VALUES(02885, 'The New English-Filipino Filipino-English Dictionary',5,1,1);--11
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
@@ -264,9 +254,7 @@ INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
     VALUES(000079, 'Tagalog-English Dictionary',7,1,1);--13
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(000156, 'The Pocket English Dictionary',4,1,1);--14
-INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(026, 'The Pocket English Dictionary',4,1,1);--15
+    VALUES(000156, 'The Pocket English Dictionary',4,1,2);--14
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
     VALUES(020598, 'Purnell’s Concise Dictionary of Science',8,1,1);--16
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
@@ -274,9 +262,7 @@ INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
     VALUES(036116, 'The New Choice English Dictionary',10,1,1);--18
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(000392, 'Rhyming Dictionary over 15,000 Words',11,1,1);--19
-INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(019753, 'Rhyming Dictionary over 15,000 Words',11,1,1);--20
+    VALUES(000392, 'Rhyming Dictionary over 15,000 Words',11,1,2);--19
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
     VALUES(039157, 'Concise Edition Spelling Grammar & Usage',12,1,1);--21
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
@@ -288,9 +274,7 @@ INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
     VALUES(020599, 'Dictionary of science and technology',14,1,1);--25
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(036134, '(2) Seven in One in Science and Technology',15,1,1);--26
-INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(000157, '(2) Seven in One in Science and Technology',15,1,1);--27
+    VALUES(036134, '(2) Seven in One in Science and Technology',15,1,2);--26
 
 --THE NEW WEBSTER’S INTERNATIONAL ENCYCLOPEDIA inventory
 
@@ -495,9 +479,7 @@ INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
     VALUES(000386, 'GROLIER INTERNATIONAL ENCYCLOPEDIA',21,10,1);--116
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(000394, 'GROLIER ENCYCLOPEDIA OF KNOWLEDGE',21,10,1);--117    
-INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(020595, 'GROLIER ENCYCLOPEDIA OF KNOWLEDGE',21,10,1);--118
+    VALUES(000394, 'GROLIER ENCYCLOPEDIA OF KNOWLEDGE',21,10,2);--117    
 
 -- COLLIER’S ENCYCLOPEDIA with Bibliography and Index inventory
 
@@ -711,17 +693,13 @@ INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
 -- SCHOOL MANAGEMENT inventory
 
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(040968, 'Masay A Woman of Selfless Love',41,22,1);--207
-INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(040969, 'Masay A Woman of Selfless Love',41,22,1);--208
+    VALUES(040968, 'Masay A Woman of Selfless Love',41,22,2);--207
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
     VALUES(03440, 'The Human Adventure',42,22,1);--209
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
     VALUES(03441, 'The Search for Identity',43,22,1);--210
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(000656, 'Tales from our Malay Past',44,22,1);--211
-INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(000657, 'Tales from our Malay Past',44,22,1);--212
+    VALUES(000656, 'Tales from our Malay Past',44,22,2);--211
 
 -- REVIEWERS inventory
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
