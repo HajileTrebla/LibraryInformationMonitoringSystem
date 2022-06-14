@@ -87,13 +87,13 @@ INSERT INTO lib_inventory_subjects(categID, subjectName)
 
 --DICTIONARY AUTHORS
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('Merriam-Webster Inc.',1); --1
+    VALUES('Merriam-Webster Inc.',NULL); --1
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('J.G. Ferguson Publishing Company',1);--2
+    VALUES('J.G. Ferguson Publishing Company',NULL);--2
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('Lexicon Publications, INC.',1);--3
+    VALUES('Lexicon Publications, INC.',NULL);--3
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('Gayo Publishing',1);--4
+    VALUES('Gayo Publishing',NULL);--4
 INSERT INTO lib_inventory_authors(firstName, lastName)
     VALUES('Maria Odulio','De Guzman');--5
 INSERT INTO lib_inventory_authors(firstName, lastName)
@@ -103,15 +103,15 @@ INSERT INTO lib_inventory_authors(firstName, lastName)
 INSERT INTO lib_inventory_authors(firstName, lastName)
     VALUES('Robin','Kerrod');--8
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('Scholastic Inc.',1);--9
+    VALUES('Scholastic Inc.',NULL);--9
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('Peter Haddock Publishing',1);--10
+    VALUES('Peter Haddock Publishing',NULL);--10
 INSERT INTO lib_inventory_authors(firstName, lastName)
     VALUES('Sue','Young');--11
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('Geddes & Grosset',1);--12
+    VALUES('Geddes & Grosset',NULL);--12
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('Cacho Hermanos, Inc.',1);--13
+    VALUES('Cacho Hermanos, Inc.',NULL);--13
 INSERT INTO lib_inventory_authors(firstName, lastName)
     VALUES('Kristine Angela M.','Santiago');--14
 INSERT INTO lib_inventory_authors(firstName, lastName)
@@ -119,72 +119,72 @@ INSERT INTO lib_inventory_authors(firstName, lastName)
 
 --THE NEW WEBSTER’S INTERNATIONAL ENCYCLOPEDIA AUTHOR
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('TRIDENT PRESS INTERNATIONAL',1);--16
+    VALUES('TRIDENT PRESS INTERNATIONAL',NULL);--16
 
 --WEBSTER’S UNIFIED WILDLIFE ENCYCLOPEDIA AUTHOR
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('WEBSTER’S UNIFIED INC.',1);--17
+    VALUES('WEBSTER’S UNIFIED INC.',NULL);--17
 
 --NEW ENCYCLOPEDIA OF SCIENCE AUTHOR
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('FUNK & WAGNALLS, INC.',1);--18
+    VALUES('FUNK & WAGNALLS, INC.',NULL);--18
 
 --THE NEW ENCYCLOPEDIA BRITANNICA AUTHOR
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('ENCYCLOPEDIA BRITANNICA, INC.',1);--19
+    VALUES('ENCYCLOPEDIA BRITANNICA, INC.',NULL);--19
 
 --THE NEW ENCYCLOPEDIA BRITANNICA READY REFERENCE, THE NEW ENCYCLOPEDIA BRITANNICA IN 32 VOLUMES, THE NEW ENCYCLOPEDIA BRITANNICA, EVENTS OF 1993, AUTHOR
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('ENCYCLOPEDIA BRITANNICA, INC. 1994',1);--20
+    VALUES('ENCYCLOPEDIA BRITANNICA, INC. 1994',NULL);--20
 
 --GROLIER INTERNATIONAL ENCYCLOPEDIA AUTHOR
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('GROLIER INCORPORATED',1);--21
+    VALUES('GROLIER INCORPORATED',NULL);--21
 
 --COLLIER’S ENCYCLOPEDIA with Bibliography and Index AUTHOR
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('P.F. Collier, Inc.',1);--22
+    VALUES('P.F. Collier, Inc.',NULL);--22
 
 --LEXICON UNIVERSAL ENCYCLOPEDIA AUTHOR
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('LEXICON PUBLICATIONS, INC.',1);--23
+    VALUES('LEXICON PUBLICATIONS, INC.',NULL);--23
 
 --COMPLETE HANDYMAN ENCYCLOPEDIA AUTHOR
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('H.S. STUTTMAN INC.',1);--24
+    VALUES('H.S. STUTTMAN INC.',NULL);--24
 
 --A TREASURY OF HANDMADE GIFTS AUTHOR
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('ANAYA PUBLISHER LTD',1);--25
+    VALUES('ANAYA PUBLISHER LTD',NULL);--25
 
 --GUINNESS AUTHOR
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('Gullane Entertainment Company',1);--26
+    VALUES('Gullane Entertainment Company',NULL);--26
 
 --THE GROLIER AUTHOR
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('Kingfisher Publications Plc',1);--27
+    VALUES('Kingfisher Publications Plc',NULL);--27
 
 --THE HERITAGE FOUNDATION AUTHOR
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('The Heritage Foundation and Dow Jones & Company, Inc.',1);--28
+    VALUES('The Heritage Foundation and Dow Jones & Company, Inc.',NULL);--28
 
 -- THESAURUS AUTHORS
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('The Ballantine Publishing Group',1);--29
+    VALUES('The Ballantine Publishing Group',NULL);--29
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('W&R Chambers Ltd',1);--30
+    VALUES('W&R Chambers Ltd',NULL);--30
 
 -- THE WORLD ALMANAC AUTHORS
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('World Almanac Books',1);--31
+    VALUES('World Almanac Books',NULL);--31
 
 
 -- INTERNATIONAL BOOKS AUTHORS
 INSERT INTO lib_inventory_authors(firstName, lastName)
     VALUES('Thomas F.','Pettigrew');--32
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('Westview Press',1);--33
+    VALUES('Westview Press',NULL);--33
 INSERT INTO lib_inventory_authors(firstName, lastName)
     VALUES('Ronald J.','Stupak');--34
 INSERT INTO lib_inventory_authors(firstName, lastName)
@@ -203,23 +203,23 @@ INSERT INTO lib_inventory_authors(firstName, lastName)
 
 -- SCHOOL MANAGEMENT AUTHORS
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('MWTW, Inc.',1);--41
+    VALUES('MWTW, Inc.',NULL);--41
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('Addison-Wesley Publishing Company',1);--42
+    VALUES('Addison-Wesley Publishing Company',NULL);--42
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('J.B. Lippincott Company',1);--43
+    VALUES('J.B. Lippincott Company',NULL);--43
 INSERT INTO lib_inventory_authors(firstName, lastName)
     VALUES('Mela Ma.','Roque');--44
 
 -- REVIEWERS AUTHORS
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('KATHA Publishing Company',1);--45
+    VALUES('KATHA Publishing Company',NULL);--45
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('Loyola Student Center',1);--46
+    VALUES('Loyola Student Center',NULL);--46
 
 -- University of Western Sydney AUTHOR
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('UWS International 2000',1);--47
+    VALUES('UWS International 2000',NULL);--47
 
 -- TEACHING AUTHOR
 INSERT INTO lib_inventory_authors(firstName, lastName)
@@ -227,11 +227,11 @@ INSERT INTO lib_inventory_authors(firstName, lastName)
 
 -- SCHOLASTIC APTITUDE TEST AUTHOR
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('JMC Press, Inc.',1);--49
+    VALUES('JMC Press, Inc.',NULL);--49
 
 -- Help! I Have to take A Test AUTHOR
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('Louise Colligan',1);--50
+    VALUES('Louise','Colligan');--50
 
 
 --inventoryID

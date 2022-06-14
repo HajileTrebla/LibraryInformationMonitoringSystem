@@ -118,7 +118,7 @@ CREATE TABLE lib_faculty(
     facultyID BIGINT NOT NULL,
     firstName VARCHAR(50) NOT NULL,
     lastName VARCHAR(50) NOT NULL,
-    position VARCHAR(30),
+    position TEXT,
     CONSTRAINT fk_facultyID FOREIGN KEY(facultyID) REFERENCES lib_master_list(referenceID)
 );
 

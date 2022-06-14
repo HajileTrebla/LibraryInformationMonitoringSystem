@@ -36,13 +36,13 @@ INSERT INTO lib_inventory_authors(firstName, lastName)
 
 -- ENGLISH authors
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('Phoenix Press, Inc.',1);--53
+    VALUES('Phoenix Press, Inc.',NULL);--53
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('Scholastic Magazines, Inc.',1);--54
+    VALUES('Scholastic Magazines, Inc.',NULL);--54
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('Philippine Graphic Arts, Inc.',1);--55
+    VALUES('Philippine Graphic Arts, Inc.',NULL);--55
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('Philippine Book Company',1);--56
+    VALUES('Philippine Book Company',NULL);--56
 INSERT INTO lib_inventory_authors(firstName, lastName)
     VALUES('Ruby B.','Senatin');--57
 INSERT INTO lib_inventory_authors(firstName, lastName)
@@ -70,7 +70,7 @@ INSERT INTO lib_inventory_authors(firstName, lastName)
 INSERT INTO lib_inventory_authors(firstName, lastName)
     VALUES('Domingo D. ','De Guzman');--67
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('ABIVA Publishing House, Inc',1);--68
+    VALUES('ABIVA Publishing House, Inc',NULL);--68
 INSERT INTO lib_inventory_authors(firstName, lastName)
     VALUES('Dr. Tomas Q.D.','Andres');--69
 INSERT INTO lib_inventory_authors(firstName, lastName)
@@ -78,7 +78,7 @@ INSERT INTO lib_inventory_authors(firstName, lastName)
 INSERT INTO lib_inventory_authors(firstName, lastName)
     VALUES('Prop. Ligaya O.','Bron');--71
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('Manlapaz Publishing Company',1);--72
+    VALUES('Manlapaz Publishing Company',NULL);--72
 INSERT INTO lib_inventory_authors(firstName, lastName)
     VALUES('Ponciano B.P.','Pineda');--73
 INSERT INTO lib_inventory_authors(firstName, lastName)
@@ -100,7 +100,7 @@ INSERT INTO lib_inventory_authors(firstName, lastName)
 INSERT INTO lib_inventory_authors(firstName, lastName)
     VALUES('Isagani L.','Lazaro');--82
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('FNB Educational, Inc.',1);--83
+    VALUES('FNB Educational, Inc.',NULL);--83
 INSERT INTO lib_inventory_authors(firstName, lastName)
     VALUES('Maria Odulio','De Guzman');--84
 INSERT INTO lib_inventory_authors(firstName, lastName)
