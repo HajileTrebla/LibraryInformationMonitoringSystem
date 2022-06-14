@@ -10,7 +10,7 @@
     left: 0px;
     right: 0px;
     max-width: 120%;
-    max-height: 50%;
+    max-height: 100%;
     background-size: cover;
    position: absolute;
     margin-top: 11.6em;
@@ -249,12 +249,12 @@ input{
     background: #2C7A56;
     border-radius: 1.4em;
     padding: 0.6em;
-    width: 4em;
+    width: 4.7em;
     color: white;
     font-family: 'Inter', sans-serif;
 }
 
-button[name="submit"]:hover{
+.submit:hover{
     background-color: black;
     border-radius: 0.7em;
 }
@@ -273,11 +273,11 @@ button[name="submit"]:hover{
     text-transform: uppercase;
     font-family: 'Inter', sans-serif;
     color: white;
-    padding: 0.7em 1.5em 0.7em;
+    padding: 1em 1.5em 1em;
     background: #2C7A56;
-    position: relative;
-    top: 13em;
-    left: -5em;
+    position: absolute;
+    top: 62em;
+    left: 3em;
     border-radius: 2em;
 }
 
@@ -290,11 +290,11 @@ button[name="submit"]:hover{
     text-transform: uppercase;
     font-family: 'Inter', sans-serif;
     color: white;
-    padding: 0.7em 1.5em 0.7em;
+    padding: 1em 1.5em 1em;
     background: #2C7A56;
-    position: relative;
-    top: 13em;
-    left: 78.5em;
+    position: absolute;
+    top: 62em;
+    left: 95em;
     border-radius: 2em;
 }
 
@@ -309,3 +309,81 @@ button[name="submit"]:hover{
 
 .mainText .line2 {
 }
+
+.registerHeader{
+    position: relative;
+    right: 2em;
+    bottom: 1.3em;
+    width: 91.05em;
+    height: 117px;
+
+    background: #100B0B;
+    border-bottom: 7px solid #2C7A56;
+}
+
+.registerHeaderText{
+    position: relative;
+    text-align: center;
+    font-weight: 700;
+    font-size: 35px;
+    font-family: 'Grandstander', cursive;
+    color: white;
+    line-height: 120px;
+}
+
+
+.Register{
+    background: (0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 40em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.registerForm{
+    height: 100%;
+    width: 87.8em;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    right: 0.7em;
+    bottom: 8em;
+}
+
+.registerBody{
+    margin: 20px auto;
+    display: block;
+    width: 60em;
+    position: relative;
+    top: 2.2em;
+    padding: 8px;
+}
+
+.registerButton{
+    text-decoration: none;
+    position: relative;
+    text-align: center;
+    left: 45.3%;
+    top: 5.5em;
+    font-weight: 400;
+    font-size: 15px;
+    display: block;
+    text-align: center;
+    background: #2C7A56;
+    border-radius: 1.4em;
+    padding: 0.6em;
+    width: 5.4em;
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+.registerButton:hover{
+     background: black;
+     border-color: #2C7A56;
+     border: 1em;
+}
+
+

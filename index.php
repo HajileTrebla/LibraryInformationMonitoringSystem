@@ -22,7 +22,7 @@ session_start();
 
 <body>
     <div class="container">
-        <div class="Header">
+        <div class="Header" id="topPage">
             <div class="headerbg">
                 <div class="Logo"><a href="/LibraryInformationMonitoringSystem/index.php"><img src="/LibraryInformationMonitoringSystem/assets.img/MMPNS-Logo.png" alt=""></a>
                     <div class="Header Text">
@@ -86,18 +86,30 @@ session_start();
                     <div class="overlay"></div>
                 </div>
                 <div class="Wrapper">
+                    <div class="Register" id="registrationForm">
+                        <div class="registerForm">
+                            <div class="registerHeader">
+                                <div class="registerHeaderText">REGISTRATION FORM</div>
+                            </div>
+                            <div class="registerBody">
+                                <input type="text" placeholder="Name">
+                                <input type="text" placeholder="Grade & Section" </div>
+                                <a href=""><button type="submit" class="registerButton" name="Login">SUBMIT</button></a>
+                            </div>
+                        </div>
+                    </div>
                     <div class="Borrow Form Header">
-                        borrow form head
                     </div>
                     <div class="Borrow Form">
-                        borrow form
                     </div>
-                    <a href="../LibraryInformationMonitoringSystem/borrow.php" class="borrow">Borrow</a>
-                    <a href="../LibraryInformationMonitoringSystem/registration.php" class="register">Register</a>
+                    <button type="button" class="borrow" id="borrow">Borrow</button>
+                    <button type="button" class="register" id="register">Register</button>
                 </div>
             </div>
+
         </div>
         <div class="Footer">
+
             <div class="left-bar">
                 <div>
                     ADD EXTRA INFO HERE/LINKS
