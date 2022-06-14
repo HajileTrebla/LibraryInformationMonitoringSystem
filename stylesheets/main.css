@@ -10,7 +10,7 @@
     left: 0px;
     right: 0px;
     max-width: 120%;
-    max-height: 50%;
+    max-height: 100%;
     background-size: cover;
    position: absolute;
     margin-top: 11.6em;
@@ -249,12 +249,12 @@ input{
     background: #2C7A56;
     border-radius: 1.4em;
     padding: 0.6em;
-    width: 4em;
+    width: 4.7em;
     color: white;
     font-family: 'Inter', sans-serif;
 }
 
-button[name="submit"]:hover{
+.submit:hover{
     background-color: black;
     border-radius: 0.7em;
 }
@@ -273,11 +273,11 @@ button[name="submit"]:hover{
     text-transform: uppercase;
     font-family: 'Inter', sans-serif;
     color: white;
-    padding: 0.7em 1.5em 0.7em;
+    padding: 1em 1.5em 1em;
     background: #2C7A56;
-    position: relative;
-    top: 13em;
-    left: -5em;
+    position: absolute;
+    top: 62em;
+    left: 3em;
     border-radius: 2em;
 }
 
@@ -290,11 +290,11 @@ button[name="submit"]:hover{
     text-transform: uppercase;
     font-family: 'Inter', sans-serif;
     color: white;
-    padding: 0.7em 1.5em 0.7em;
+    padding: 1em 1.5em 1em;
     background: #2C7A56;
-    position: relative;
-    top: 13em;
-    left: 78.5em;
+    position: absolute;
+    top: 62em;
+    left: 95em;
     border-radius: 2em;
 }
 
@@ -309,3 +309,150 @@ button[name="submit"]:hover{
 
 .mainText .line2 {
 }
+
+
+
+.registerHeaderText{
+    position: relative;
+    text-align: center;
+    font-weight: 700;
+    font-size: 35px;
+    font-family: 'Grandstander', cursive;
+    color: white;
+    line-height: 120px;
+}
+
+
+.Register1{
+    background: (0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 43.74em;
+    right: 20em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registerHeader1{
+    position: relative;
+    right: 2em;
+    bottom: 1.3em;
+    width: 47em;
+    height: 117px;
+
+    background: #100B0B;
+    border-bottom: 7px solid #2C7A56;
+}
+
+.registerForm1{
+    height: 32.1em;
+    width: 43.7em;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    right: 1.4em;
+    border: solid 1px;
+}
+
+.registerBody1{
+    margin: 20px auto;
+    display: block;
+    width: 40em;
+    position: relative;
+    top: 1.6em;
+    padding: 8px;
+}
+
+.Register2{
+    background: (0, 0, 0, 0.6);
+    height: 100%;
+    width: 47%;
+    position: relative;
+    top: 9.11em;
+    left: 46.1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registerHeader2{
+    position: relative;
+    right: 1.3em;
+    bottom: 1.4em;
+    width: 43.8em;
+    height: 117px;
+
+    background: #100B0B;
+    border-bottom: 7px solid #2C7A56;
+}
+
+.registerForm2{
+    height: 32em;
+    width: 41.2em;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    border: solid 1px;
+}
+
+.registerBody2{
+    margin: 20px auto;
+    display: block;
+    width: 40em;
+    position: relative;
+    top: 2.7em;
+    padding: 8px;
+}
+
+.registerButton1{
+    text-decoration: none;
+    position: relative;
+    text-align: center;
+    left: 42%;
+    top: 3.2em;
+    font-weight: 400;
+    font-size: 15px;
+    display: block;
+    text-align: center;
+    background: #2C7A56;
+    border-radius: 1.4em;
+    padding: 0.6em;
+    width: 6.3em;
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+.registerButton2{
+    text-decoration: none;
+    position: relative;
+    text-align: center;
+    left: 42%;
+    top: 5em;
+    font-weight: 400;
+    font-size: 15px;
+    display: block;
+    text-align: center;
+    background: #2C7A56;
+    border-radius: 1.4em;
+    padding: 0.6em;
+    width: 6.3em;
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+.registerButton1:hover{
+     background: black;
+     border-color: #2C7A56;
+     border: 1em;
+}
+
+.registerButton2:hover{
+     background: black;
+     border-color: #2C7A56;
+     border: 1em;
+}
+
