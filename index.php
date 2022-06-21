@@ -142,6 +142,6 @@ session_start();
         </div>
     </div>
 </body>
-<script src="index.js"></script>
+<script src="./js/index.jsx"></script>
 
 </html>

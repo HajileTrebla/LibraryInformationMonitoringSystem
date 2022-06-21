@@ -24,6 +24,12 @@ if (!isset($_SESSION["useruid"])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
 
 </head>
 
@@ -69,6 +75,53 @@ if (!isset($_SESSION["useruid"])) {
                     </div>
                 </div>
                 <div class="select-area">
+                    <div class="table-responsive">
+                        <br />
+                        <div class="row">
+                            <div class="input-text">
+                                <div class="col-md-2">
+                                    <label for="subj_categ">Category</label>
+                                    <select name="subj_categ" id="subj_categ">
+                                        <option value="All">All</option>
+                                        <?php
+                                        require_once "./php.functions/dbh.inc.php";
+
+                                        $dbConn = getConn();
+
+                                        $sql = "SELECT * FROM lib_inventory_subjects_category;";
+
+                                        $result = pg_query($dbConn, $sql);
+                                        if (!$result) {
+                                            echo "An Error Occured!\n";
+                                            exit();
+                                        }
+
+                                        while ($categName = pg_fetch_row($result)) {
+                                            echo "<option value='$categName[1]'>$categName[1]</option>";
+                                            echo "<br />";
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <input type="button" name="search" id="search" value="Search" class="btn btn-info" />
+                                </div>
+
+                            </div>
+                        </div>
+                        <br />
+                        <table id="inventory_data" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Resource ID</th>
+                                    <th>Resource Name</th>
+                                    <th>Authors/Publisher</th>
+                                    <th>Subject</th>
+                                    <th>Quantity</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
 
                 </div>
             </div>
@@ -87,6 +140,6 @@ if (!isset($_SESSION["useruid"])) {
         </div>
     </div>
 </body>
-<script src="index.js"></script>
+<script src="./js/inventory.jsx"></script>
 
 </html>
