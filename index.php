@@ -117,11 +117,7 @@ session_start();
                             </div>
                         </div>
                     </div>
-                    <div class="Borrow Form Header">
-                    </div>
-                    <div class="Borrow Form">
-                    </div>
-                    <button type="button" class="borrow" id="borrow">Borrow</button>
+                    <a href="../LibraryInformationMonitoringSystem/borrow.php"><button type="button" class="borrow" id="borrow">Borrow</button></a>
                     <a href="#Register"><button type="button" class="register" id="register">Register</button></a>
                 </div>
             </div>
