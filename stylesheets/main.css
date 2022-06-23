@@ -6,13 +6,13 @@
 .hero{
     width: 100%;
     padding: 20% 0% 19%;
-    background: url(../assets.img/abg.jpg) no-repeat center;
+    background: url(../assets.img/abg.jpg), url(../assets.img/bbg.jpg) no-repeat center;
     left: 0px;
     right: 0px;
     max-width: 120%;
     max-height: 100%;
     background-size: cover;
-   position: absolute;
+    position: absolute;
     margin-top: 11.6em;
     background-attachment: fixed;
 }
@@ -186,10 +186,6 @@
     width: 15em;
 }
 
-.aboutText {
-    margin: auto;
-    text-align: center;
-}
 
 .popup{
     background: (0, 0, 0, 0.6);
@@ -279,6 +275,7 @@ input{
     top: 62em;
     left: 3em;
     border-radius: 2em;
+    border: none;
 }
 
 .register:hover{
@@ -296,6 +293,7 @@ input{
     top: 62em;
     left: 95em;
     border-radius: 2em;
+    border: none;
 }
 
 .borrow:hover{
@@ -416,7 +414,6 @@ input{
     top: 3.2em;
     font-weight: 400;
     font-size: 15px;
-    display: block;
     text-align: center;
     background: #2C7A56;
     border-radius: 1.4em;
@@ -424,6 +421,7 @@ input{
     width: 6.3em;
     color: white;
     font-family: 'Inter', sans-serif;
+    border: none;
 }
 
 .registerButton2{
@@ -434,7 +432,6 @@ input{
     top: 5em;
     font-weight: 400;
     font-size: 15px;
-    display: block;
     text-align: center;
     background: #2C7A56;
     border-radius: 1.4em;
@@ -442,20 +439,181 @@ input{
     width: 6.3em;
     color: white;
     font-family: 'Inter', sans-serif;
+    border: none;
 }
 
 .registerButton1:hover{
      background: black;
      border-color: #2C7A56;
-     border: 1em;
 }
 
 .registerButton2:hover{
      background: black;
      border-color: #2C7A56;
-     border: 1em;
 }
 
 .select-area{
     background: whitesmoke;
+}
+
+.aboutText{
+    font-family: "Poppins", sans-serif;
+    position: relative;
+    bottom: 21em;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.aboutTitle{
+    min-height: 100vh;
+    text-align: center;
+    font-size: 35px;
+    text-transform: uppercase;
+    position: relative;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    top: 6.2em;
+}
+
+.insti{
+    min-height: 100vh;
+    text-align: center;
+    font-size: 17px;
+    padding: 4em;
+    position: relative;
+    top: 10em;
+}
+
+
+.insti h3{
+    font-size: 70px;
+    text-align: center;
+}
+
+.mission{
+    min-height: 100vh;
+    text-align: center;
+    font-size: 17px;
+    padding: 4em;
+    position: relative;
+    top: 11em;
+}
+
+.mission h3{
+    font-size: 70px;
+    text-align: center;
+}
+
+.vision{
+    min-height: 100vh;
+    text-align: center;
+    font-size: 17px;
+    padding: 2em;
+    padding-top: 14em;
+    position: relative;
+}
+
+.vision h3{
+    font-size: 70px;
+    text-align: center;
+}
+
+.bg2{
+    background: url(../assets.img/insti.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.bg3{
+    background: url(../assets.img/hallway.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.bg4{
+    background: url(../assets.img/park.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.back-button{
+    position: fixed;
+    bottom: 5em;
+    right: 3em;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    text-align: center;
+    border: none;
+    color: white;
+    font-weight: 700;
+    background: #2C7A56;
+    float: right;
+}
+
+.back-button:hover{
+    background: black;
+}
+
+.insti-button:hover{
+    background: black;
+}
+
+.mission-button:hover{
+    background: black;
+}
+
+.vision-button:hover{
+    background: black;
+}
+
+.mission-button{
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    text-align: center;
+    position: relative;
+    top: 38em;
+    color: white;
+    width: 7em;
+    height: 2.7em;
+    background: #2C7A56;
+    text-transform: uppercase;
+    border: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.insti-button{
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    text-align: center;
+    position: relative;
+    left: 40em;
+    top: 40.7em;
+    color: white;
+    width: 7em;
+    height: 2.7em;
+    background: #2C7A56;
+    text-transform: uppercase;
+    border: none;
+    display: block;
+}
+
+.vision-button{
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    text-align: center;
+    position: relative;
+    float: right;
+    right: 40em;
+    top: 35.3em;
+    color: white;
+    width: 7em;
+    height: 2.7em;
+    background: #2C7A56;
+    text-transform: uppercase;
+    border: none;
+    display: block;
+}
+
+html{
+    scroll-behavior: smooth;
 }
