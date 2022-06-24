@@ -5,16 +5,17 @@ $dbConn = getConn();
 
 $columns = array('resc_id', 'resc_title', 'firstName', 'resc_sub', 'resc_quant');
 
-$query = "SELECT n.resourceID as resc_id, n.bookTitle as resc_title, a.lastName as lastName, a.firstName as firstName, s.subjectName as resc_sub, n.quantity as resc_quant
-          FROM lib_inventory n, lib_inventory_authors a, lib_inventory_subjects s, lib_inventory_subjects_category c
-          WHERE n.subjectID = s.subjectID AND s.categID = c.categID AND n.authorID = a.authorID OR n.altauthorID = a.authorID 
+$query = "SELECT *
+          FROM inventory_view 
          ";
-if ($_POST["subj_categ"] === "All") {
-    $query .= "AND c.categName = '" . $_POST["subj_categ"] . "' ";
+if ($_POST["subj_categ"] !== "All") {
+    $query .= "WHERE sub_categ = '" . $_POST["subj_categ"] . "' ";
+} else if ($_POST["subj_categ"] === "All") {
+    $query .= "WHERE 1=1";
 }
 
 if (isset($_POST["search"]['values'])) {
-    $query .= 'OR resc_title LIKE "%' . $_POST['search']['values'] . '%"
+    $query .= 'resc_title LIKE "%' . $_POST['search']['values'] . '%"
                OR firstName LIKE "%' . $_POST['search']['values'] . '%"
                OR lastName LIKE "%' . $_POST['search']['values'] . '%"
               ';
@@ -23,8 +24,6 @@ if (isset($_POST["search"]['values'])) {
 if (isset($_POST["order"])) {
     $query .= 'ORDER BY ' . $columns[$_POST['order']['0']['column']] . ' ' . $_POST['order']['0']['dir'] . ' 
 ';
-} else {
-    $query .= 'ORDER BY resc_id ASC ';
 }
 
 $query1 = '';
@@ -55,9 +54,8 @@ while ($row = pg_fetch_row($result)) {
 
 function get_all_data($dbConn)
 {
-    $query = "SELECT n.resourceID as resc_id, n.bookTitle as resc_title, a.lastName as lastName, a.firstName as firstName, s.subjectName as resc_sub, n.quantity as resc_quant
-              FROM lib_inventory n, lib_inventory_authors a, lib_inventory_subjects s, lib_inventory_subjects_category c
-              WHERE n.authorID = a.authorID OR n.altauthorID = a.authorID AND n.subjectID = s.subjectID AND s.categID = c.categID
+    $query = "SELECT * 
+              FROM inventory_view
              ";
     $result = pg_query($dbConn, $query);
     return pg_num_rows($result);
