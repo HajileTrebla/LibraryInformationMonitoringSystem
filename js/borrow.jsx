@@ -1,6 +1,5 @@
 $(document).on('click', '#Borrow', function(){
     var value=$(this).closest("tr").children("td:first").text();
-    alert(value);
     document.querySelector(".popup").style.display = "flex";    
     $("#refid").val(value);
 });

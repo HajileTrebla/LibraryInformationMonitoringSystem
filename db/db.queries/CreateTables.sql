@@ -2,18 +2,18 @@
 --to execute run "\i path" while in the database
 
 --TableReset REMOVE COMMENT TAGS WITH CAUTION AND ONLY WHEN A BACKUP UP TO DATE
---DROP TABLE IF EXISTS lib_transactions_status CASCADE;
+DROP TABLE IF EXISTS lib_transactions_status CASCADE;
 --DROP TABLE IF EXISTS lib_transactions_penalties CASCADE;
 --DROP TABLE IF EXISTS lib_visitors_details CASCADE;
 --DROP TABLE IF EXISTS lib_inventory_changelog CASCADE;
 --DROP TABLE IF EXISTS lib_visitors CASCADE;
 --DROP TABLE IF EXISTS lib_transactions CASCADE;
+--DROP TABLE IF EXISTS lib_transactions_request CASCADE;
 --DROP TABLE IF EXISTS lib_faculty CASCADE;
 --DROP TABLE IF EXISTS lib_students CASCADE;
 --DROP TABLE IF EXISTS lib_users_log CASCADE;
 --DROP TABLE IF EXISTS lib_master_list CASCADE;
 --DROP TABLE IF EXISTS lib_inventory CASCADE;
---DROP TABLE IF EXISTS lib_transactions_request CASCADE;
 --DROP TABLE IF EXISTS lib_inventory_authors CASCADE;
 --DROP TABLE IF EXISTS lib_inventory_subjects CASCADE;
 --DROP TABLE IF EXISTS lib_inventory_subjects_category CASCADE;;
@@ -61,19 +61,6 @@ CREATE TABLE lib_inventory_subjects(
 );
 
 --Group 2
---Create Borrower Request Table
-CREATE TABLE lib_transactions_request(
-    requestID BIGSERIAL NOT NULL PRIMARY KEY,
-    borrowerID BIGINT NOT NULL,
-    referenceID BIGINT NOT NULL,
-    request_status VARCHAR(5) NOT NULL,
-    dateProcessed TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
-    logID BIGINT NOT NULL UNIQUE,
-    CONSTRAINT fk_borrowerID FOREIGN KEY(borrowerID) REFERENCES lib_master_list(referenceID),
-    CONSTRAINT fk_referenceID FOREIGN KEY(referenceID) REFERENCES lib_inventory(resourceID),
-    CONSTRAINT fk_logID FOREIGN KEY(logID) REFERENCES lib_global_log(glogID)
-);
-
 --Create Inventory Details
 CREATE TABLE lib_inventory(
     resourceID BIGINT NOT NULL PRIMARY KEY,
@@ -106,6 +93,20 @@ CREATE TABLE lib_master_list(
     CONSTRAINT fk_logID FOREIGN KEY(logID) REFERENCES lib_global_log(glogID)
 );
 
+
+--Create Borrower Request Table
+CREATE TABLE lib_transactions_request(
+    requestID BIGSERIAL NOT NULL PRIMARY KEY,
+    borrowerID BIGINT NOT NULL,
+    referenceID BIGINT NOT NULL,
+    request_status VARCHAR(5) NOT NULL,
+    dateProcessed TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    logID BIGINT NOT NULL UNIQUE,
+    CONSTRAINT fk_borrowerID FOREIGN KEY(borrowerID) REFERENCES lib_master_list(referenceID),
+    CONSTRAINT fk_referenceID FOREIGN KEY(referenceID) REFERENCES lib_inventory(resourceID),
+    CONSTRAINT fk_logID FOREIGN KEY(logID) REFERENCES lib_global_log(glogID)
+);
+
 --Group 3 
 --Create Registered Students Table
 CREATE TABLE lib_students(
@@ -133,8 +134,10 @@ CREATE TABLE lib_transactions(
     dateDue TIMESTAMP,
     resourceID BIGINT NOT NULL, 
     processDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    requestID BIGINT NOT NULL UNIQUE,
     logID BIGINT NOT NULL UNIQUE,
     CONSTRAINT fk_logID FOREIGN KEY(logID) REFERENCES lib_global_log(glogID),
+    CONSTRAINT fk_requestID FOREIGN KEY(requestID) REFERENCES lib_transactions_request(requestID),
     CONSTRAINT fk_borrowerID FOREIGN KEY(borrowerID) REFERENCES lib_master_list(referenceID),
     CONSTRAINT fk_resourceID FOREIGN KEY(resourceID) REFERENCES lib_inventory(resourceID)
 );
@@ -183,9 +186,12 @@ CREATE TABLE lib_transactions_penalties(
 CREATE TABLE lib_transactions_status(
     transactionID BIGINT NOT NULL,
     status VARCHAR(5) NOT NULL,
+    dateReleased TIMESTAMP,
     dateReturned TIMESTAMP,
-    logID BIGINT NOT NULL UNIQUE,
-    CONSTRAINT fk_logID FOREIGN KEY(logID) REFERENCES lib_global_log(glogID),
+    logID_rel BIGINT NOT NULL UNIQUE,
+    logID_ret BIGINT UNIQUE,
+    CONSTRAINT fk_logID_rel FOREIGN KEY(logID_rel) REFERENCES lib_global_log(glogID),
+    CONSTRAINT fk_logID_ret FOREIGN KEY(logID_ret) REFERENCES lib_global_log(glogID),
     CONSTRAINT fk_transactionID FOREIGN KEY(transactionID) REFERENCES lib_transactions(transactionID)
 );
 
