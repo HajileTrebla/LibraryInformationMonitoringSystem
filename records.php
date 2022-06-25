@@ -24,6 +24,8 @@
                 <div class="RightOptions">
                     <ul class="Menu">
                         <!--Login changes to Logout when logged into session, Inventory and Records are also hidden when logged out-->
+
+                        <li><a href="../LibraryInformationMonitoringSystem/visitorLog.php">Visitor Log</a></li>
                         <li><a href="../LibraryInformationMonitoringSystem/about.php">About</a></li>
                         <li><a href="../LibraryInformationMonitoringSystem/inventory.php">Inventory</a></li>
                         <li><a href="../LibraryInformationMonitoringSystem/records.php">Records</a></li>
