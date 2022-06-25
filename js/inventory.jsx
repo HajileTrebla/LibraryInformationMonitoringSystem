@@ -14,7 +14,13 @@ $(document).ready(function(){
     });
     }
     $('#search').click(function(){
-        $('#inventory_data').DataTable().destroy();
-        fetch_data(subj_categ);
+        var subj_categ = $('#subj_categ').val();
+        if(subj_categ != '') {
+            $('#inventory_data').DataTable().destroy();
+            fetch_data(subj_categ);
+        }
+        else {
+            alert("Input Error");
+        }
     }); 
 });

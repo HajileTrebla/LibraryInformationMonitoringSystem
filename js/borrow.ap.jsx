@@ -13,14 +13,6 @@ $(document).ready(function(){
             }
     });
     }
-    $('#search').click(function(){
-        var subj_categ = $('#subj_categ').val();
-        if(subj_categ != '') {
-            $('#inventory_data').DataTable().destroy();
-            fetch_data(subj_categ);
-        }
-        else {
-            alert("Input Error");
-        }
-    }); 
+    $('#inventory_data').DataTable().destroy();
+    fetch_data();
 });

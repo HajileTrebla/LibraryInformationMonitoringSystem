@@ -40,11 +40,15 @@ while ($row = pg_fetch_row($result)) {
     $sub_array = array();
     $sub_array[] = $row[0];
     $sub_array[] = $row[1];
-    $resc_auth = $row[3] . ' ' . $row[2];
-    $sub_array[] = $resc_auth;
+    $borrower = $row[3] . ' ' . $row[2];
+    $sub_array[] = $borrower;
     $sub_array[] = $row[4];
     $sub_array[] = $row[5];
-    $sub_array[] = '<a href="#"><button onclick="" id="Borrow">Borrow</button></a>';
+    if ($row[4] === 'REL') {
+        $sub_array[] = '<button id="Return">Return</button>';
+    } else {
+        $sub_array[] = '<button id="Release">Release</button><button id="Deny">Deny</button>';
+    }
     $data[] = $sub_array;
 }
 

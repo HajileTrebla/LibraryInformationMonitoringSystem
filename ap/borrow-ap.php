@@ -72,7 +72,7 @@ if (!isset($_SESSION["useruid"])) {
             <div class="hero">
                 <div class="mainText">
                     <div class="line2">
-                        Library Inventory - Borrow System
+                        Library Inventory - Borrow Requests
                     </div>
                 </div>
                 <div class="popup">
@@ -99,7 +99,7 @@ if (!isset($_SESSION["useruid"])) {
                         <div class="row">
                             <div class="input-text">
                                 <div class="col-md-2">
-                                    <input type="button" name="search" id="search" value="SHOW" class="btn btn-info" />
+                                    <a href="../borrow.php"><input type="button" value="TO BORROW" class="btn btn-info" /></a>
                                 </div>
 
                             </div>
