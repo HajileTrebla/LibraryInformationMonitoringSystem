@@ -2,6 +2,10 @@
 <?php
 session_start();
 $_SESSION["uborrow"] = true;
+if (!isset($_SESSION["useruid"])) {
+    header("Location: index.php?redirect");
+    exit();
+}
 ?>
 <html lang="en">
 
@@ -10,7 +14,7 @@ $_SESSION["uborrow"] = true;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library Monitoring System</title>
 
-    <link rel="stylesheet" href="/LibraryInformationMonitoringSystem/stylesheets/main.css">
+    <link rel="stylesheet" href="../stylesheets/main.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,19 +51,19 @@ $_SESSION["uborrow"] = true;
                     <ul class="Menu">
                         <?php
                         if (isset($_SESSION["useruid"])) {
-                            echo '<li><a href="../LibraryInformationMonitoringSystem/php.functions/logout.inc.php" class="button" id="Logout-button">Logout</a></li>';
+                            echo '<li><a href="../php.functions/logout.inc.php" class="button" id="Logout-button">Logout</a></li>';
                         } else {
                             echo '<li><a href="#" class="button" id="Login-button">Login</a></li>';
                         }
                         ?>
-                        <li><a href="../LibraryInformationMonitoringSystem/about.php">About</a></li>
+                        <li><a href="../about.php">About</a></li>
                         <?php
                         if (isset($_SESSION["useruid"])) {
-                            echo '<li><a href="../LibraryInformationMonitoringSystem/inventory.php">Inventory</a></li>';
-                            echo '<li><a href="../LibraryInformationMonitoringSystem/records.php">Records</a></li>';
+                            echo '<li><a href="../inventory.php">Inventory</a></li>';
+                            echo '<li><a href="../records.php">Records</a></li>';
                         }
                         ?>
-                        <li><a href="../LibraryInformationMonitoringSystem/index.php">Home</a></li>
+                        <li><a href="../index.php">Home</a></li>
                     </ul>
                 </div>
             </div>
@@ -95,34 +99,7 @@ $_SESSION["uborrow"] = true;
                         <div class="row">
                             <div class="input-text">
                                 <div class="col-md-2">
-                                    <label for="subj_categ">Category</label>
-                                    <select name="subj_categ" id="subj_categ">
-                                        <option value="All">All</option>
-                                        <?php
-                                        require_once "./php.functions/dbh.inc.php";
-
-                                        $dbConn = getConn();
-
-                                        $sql = "SELECT * FROM lib_inventory_subjects_category;";
-
-                                        $result = pg_query($dbConn, $sql);
-                                        if (!$result) {
-                                            echo "An Error Occured!\n";
-                                            exit();
-                                        }
-
-                                        while ($categName = pg_fetch_row($result)) {
-                                            echo "<option value='$categName[1]'>$categName[1]</option>";
-                                            echo "<br />";
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="button" name="search" id="search" value="Search" class="btn btn-info" />
-                                </div>
-                                <div class="col-md-2">
-                                    <a href="./ap/borrow-ap.php"><input type="button" value="View Requests" class="btn btn-info" /></a>
+                                    <input type="button" name="search" id="search" value="SHOW" class="btn btn-info" />
                                 </div>
 
                             </div>
@@ -131,12 +108,12 @@ $_SESSION["uborrow"] = true;
                         <table id="inventory_data" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th>Resource ID</th>
+                                    <th>Request ID</th>
+                                    <th>Borrower Name</th>
                                     <th>Resource Name</th>
-                                    <th>Authors/Publisher</th>
-                                    <th>Subject</th>
-                                    <th>Quantity</th>
-                                    <th>Request</th>
+                                    <th>Status</th>
+                                    <th>Date Sent</th>
+                                    <th>Option</th>
                                 </tr>
                             </thead>
                         </table>
@@ -159,7 +136,7 @@ $_SESSION["uborrow"] = true;
         </div>
     </div>
 </body>
-<script src="./js/inventory.jsx"></script>
-<script src="./js/borrow.jsx"></script>
+<script src="../js/borrow.ap.jsx"></script>
+<script src="../js/borrow.jsx"></script>
 
 </html>

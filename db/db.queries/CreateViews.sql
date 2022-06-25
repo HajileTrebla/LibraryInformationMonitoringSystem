@@ -5,6 +5,7 @@
 DROP VIEW IF EXISTS records_view_byoldest;
 DROP VIEW IF EXISTS records_view_byrecent;
 DROP VIEW IF EXISTS inventory_view;
+DROP VIEW IF EXISTS transaction_request_view;
 
 --Create Views
 --Create View for Inventory
@@ -13,6 +14,13 @@ CREATE VIEW inventory_view as
     FROM lib_inventory n, lib_inventory_authors a, lib_inventory_subjects s, lib_inventory_subjects_category c
     WHERE n.subjectID = s.subjectID AND s.categID = c.categID AND n.authorID = a.authorID 
     ORDER BY n.resourceID ASC;
+
+--Create View for Pending Borrow
+CREATE VIEW transaction_request_view as
+    SELECT r.requestID as resc_id, i.bookTitle as resc_title, s.lastName as lastName, s.firstName as firstName, r.request_status, r.dateprocessed
+    FROM lib_transactions_request r, lib_master_list m, lib_inventory i, lib_students s, lib_faculty f
+    WHERE r.referenceID = i.resourceID AND r.borrowerID = m.referenceID AND (m.referenceID = s.studentID OR m.referenceID = f.facultyID)
+    ORDER BY r.requestID DESC;
 
 --Create View for Report History / Records by oldest
 CREATE VIEW records_view_byoldest as

@@ -5,7 +5,7 @@ $(document).ready(function(){
             "serverSide" : true,
             "order" : [],
             "ajax" : {
-                url : "./php.functions/inventory.inc.php",
+                url : "../php.functions/borrow.ap.inc.php",
                 type : "POST",
                 data : {
                     subj_categ:subj_categ
@@ -14,7 +14,13 @@ $(document).ready(function(){
     });
     }
     $('#search').click(function(){
-        $('#inventory_data').DataTable().destroy();
-        fetch_data(subj_categ);
+        var subj_categ = $('#subj_categ').val();
+        if(subj_categ != '') {
+            $('#inventory_data').DataTable().destroy();
+            fetch_data(subj_categ);
+        }
+        else {
+            alert("Input Error");
+        }
     }); 
 });
