@@ -4,14 +4,16 @@ require_once 'dbh.inc.php';
 $dbConn = getConn();
 
 $query = "SELECT *
-          FROM transaction_request_view
+          FROM transactions_request_view
           WHERE 1=1
          ";
 
 if (isset($_POST["search"]['value'])) {
     $query .= "AND (resc_title LIKE '%" . $_POST['search']['value'] . "%'
-               OR firstName LIKE '%" . $_POST['search']['value'] . "%'
-               OR lastName LIKE '%" . $_POST['search']['value'] . "%' )";
+               OR sfirstName LIKE '%" . $_POST['search']['value'] . "%'
+               OR slastName LIKE '%" . $_POST['search']['value'] . "%' 
+               OR ffirstName LIKE '%" . $_POST['search']['value'] . "%'
+               OR flastName LIKE '%" . $_POST['search']['value'] . "%' )";
 }
 
 if (isset($_POST["order"])) {
@@ -60,7 +62,7 @@ while ($row = pg_fetch_row($result)) {
 function get_all_data($dbConn)
 {
     $query = "SELECT * 
-              FROM inventory_view
+              FROM transactions_request_view
              ";
     $result = pg_query($dbConn, $query);
     return pg_num_rows($result);

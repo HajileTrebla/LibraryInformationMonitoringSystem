@@ -89,12 +89,12 @@ if ($_POST["option"] === 'Release') {
     $log = generateLog($section_type, $log_desc);
 
     $Tid = getTid($reqid, 'reqid');
+    $status = 'RET';
 
-    /*
     $date = date('Y-m-d H:i:s');
 
     $sqlin = "UPDATE lib_transactions_status 
-              SET status = $1, dateReleased = $2, logID_rel = $3
+              SET status = $1, dateReturned = $2, logID_ret = $3
               WHERE transactionID = $4";
 
     if (!pg_send_query($dbConn, $sqlin)) {
@@ -103,8 +103,7 @@ if ($_POST["option"] === 'Release') {
     }
 
     pg_prepare($dbConn, "release-res", $sqlin);
-    pg_execute($dbConn, "release-res", array($status, $date, $log));
-     */
+    pg_execute($dbConn, "release-res", array($status, $date, $log, $Tid));
 
     $sqlul = "UPDATE lib_transactions_request
              SET request_status = 'RET'   
