@@ -2,20 +2,24 @@
 date_default_timezone_set("Asia/Hong_Kong");
 
 if ($_POST["option"] === 'Release') {
-    $section_type = 7;
+    $section_type = 3;
     $date = date('Y-m-d H:i:s a T');
 
     $reqid =  $_POST["reqID"];
 
     require_once 'dbh.inc.php';
     require_once 'functions.inc.php';
+    require_once 'transaction.inc.php';
 
     $dbConn = getConn();
 
     $log_desc = "Request # $reqid is has been Released on $date";
     $log = generateLog($section_type, $log_desc);
 
-    /*$date = date('Y-m-d H:i:s');
+    transactInit($reqid, $date, $log);
+    $Tid = getTid($reqid, 'reqid');
+
+    $date = date('Y-m-d H:i:s');
 
     $sqlin = "INSERT 
               INTO lib_transactions_status(transactionID, status, dateReleased, logID_rel)
@@ -27,8 +31,8 @@ if ($_POST["option"] === 'Release') {
     }
 
     pg_prepare($dbConn, "release-res", $sqlin);
-    pg_execute($dbConn, "release-res", array($status, $date, $log));
-     */
+    pg_execute($dbConn, "release-res", array($Tid, $status, $date, $log));
+
     $sqlul = "UPDATE lib_transactions_request
              SET request_status = 'REL'   
              WHERE requestID = $1";
@@ -42,10 +46,7 @@ if ($_POST["option"] === 'Release') {
     pg_execute($dbConn, "release-req", array($reqid));
 
     header('Location: ../ap/borrow-ap.php?released');
-    exit();
-}
-
-if ($_POST["option"] === 'Deny') {
+} else if ($_POST["option"] === 'Deny') {
     $section_type = 5;
     $date = date('Y-m-d H:i:s a T');
 
@@ -72,10 +73,7 @@ if ($_POST["option"] === 'Deny') {
     pg_execute($dbConn, "deny-req", array($reqid));
 
     header('Location: ../ap/borrow-ap.php?denied');
-    exit();
-}
-
-if ($_POST["option"] === 'Return') {
+} else if ($_POST["option"] === 'Return') {
     $section_type = 7;
     $date = date('Y-m-d H:i:s a T');
 
@@ -83,11 +81,14 @@ if ($_POST["option"] === 'Return') {
 
     require_once 'dbh.inc.php';
     require_once 'functions.inc.php';
+    require_once 'transaction.inc.php';
 
     $dbConn = getConn();
 
     $log_desc = "Request # $reqid is has been Returned on $date";
     $log = generateLog($section_type, $log_desc);
+
+    $Tid = getTid($reqid, 'reqid');
 
     /*
     $date = date('Y-m-d H:i:s');
@@ -118,5 +119,4 @@ if ($_POST["option"] === 'Return') {
     pg_execute($dbConn, "return-req", array($reqid));
 
     header('Location: ../ap/borrow-ap.php?denied');
-    exit();
 }
