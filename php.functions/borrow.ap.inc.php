@@ -3,17 +3,22 @@
 require_once 'dbh.inc.php';
 $dbConn = getConn();
 
-$query = "SELECT *
-          FROM transactions_request_view
+if ($_POST['option'] === 'STUDENT') {
+    $query = "SELECT *
+          FROM transactions_request_view_s
           WHERE 1=1
-         ";
+          ";
+} else if ($_POST['option'] === 'FACULTY') {
+    $query = "SELECT *
+          FROM transactions_request_view_f
+          WHERE 1=1
+          ";
+}
 
 if (isset($_POST["search"]['value'])) {
     $query .= "AND (resc_title LIKE '%" . $_POST['search']['value'] . "%'
-               OR sfirstName LIKE '%" . $_POST['search']['value'] . "%'
-               OR slastName LIKE '%" . $_POST['search']['value'] . "%' 
-               OR ffirstName LIKE '%" . $_POST['search']['value'] . "%'
-               OR flastName LIKE '%" . $_POST['search']['value'] . "%' )";
+               OR firstName LIKE '%" . $_POST['search']['value'] . "%'
+               OR lastName LIKE '%" . $_POST['search']['value'] . "%')";
 }
 
 if (isset($_POST["order"])) {
@@ -61,9 +66,15 @@ while ($row = pg_fetch_row($result)) {
 
 function get_all_data($dbConn)
 {
-    $query = "SELECT * 
-              FROM transactions_request_view
-             ";
+    if ($_POST['option'] === 'STUDENT') {
+        $query = "SELECT *
+              FROM transactions_request_view_s
+              ";
+    } else if ($_POST['option'] === 'FACULTY') {
+        $query = "SELECT *
+              FROM transactions_request_view_f
+              ";
+    }
     $result = pg_query($dbConn, $query);
     return pg_num_rows($result);
 }
