@@ -3,28 +3,27 @@
 require_once 'dbh.inc.php';
 $dbConn = getConn();
 
-$columns = array('resc_id', 'resc_title', 'firstName', 'resc_sub', 'resc_quant');
-
 $query = "SELECT *
           FROM inventory_view 
          ";
 if ($_POST["subj_categ"] !== "All") {
-    $query .= "WHERE sub_categ = '" . $_POST["subj_categ"] . "' ";
+    $query .= "WHERE sub_categ LIKE '" . $_POST["subj_categ"] . "' ";
 } else if ($_POST["subj_categ"] === "All") {
-    $query .= "WHERE 1=1";
+    $query .= "WHERE 1=1 ";
 }
 
-if (isset($_POST["search"]['values'])) {
-    $query .= 'resc_title LIKE "%' . $_POST['search']['values'] . '%"
-               OR firstName LIKE "%' . $_POST['search']['values'] . '%"
-               OR lastName LIKE "%' . $_POST['search']['values'] . '%"
-              ';
+if (isset($_POST["search"]['value'])) {
+    $query .= "AND (resc_title LIKE '%" . $_POST['search']['value'] . "%'
+               OR firstName LIKE '%" . $_POST['search']['value'] . "%'
+               OR lastName LIKE '%" . $_POST['search']['value'] . "%' )";
 }
 
 if (isset($_POST["order"])) {
-    $query .= 'ORDER BY ' . $columns[$_POST['order']['0']['column']] . ' ' . $_POST['order']['0']['dir'] . ' 
-';
+    $column = $_POST['order']['0']['column'];
+    $order = $_POST['order']['0']['dir'];
+    $query .= 'ORDER BY ' . $column . ' ' . $order . ' ';
 }
+
 
 $query1 = '';
 $numresult = pg_query($dbConn, $query);
@@ -49,6 +48,7 @@ while ($row = pg_fetch_row($result)) {
     $sub_array[] = $resc_auth;
     $sub_array[] = $row[4];
     $sub_array[] = $row[5];
+    $sub_array[] = '<a href="#"><button onclick="" id="Borrow">Borrow</button></a>';
     $data[] = $sub_array;
 }
 

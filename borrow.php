@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
 session_start();
+$_SESSION["uborrow"] = true;
 if (!isset($_SESSION["useruid"])) {
     header("Location: index.php?redirect");
     exit();
@@ -71,8 +72,26 @@ if (!isset($_SESSION["useruid"])) {
             <div class="hero">
                 <div class="mainText">
                     <div class="line2">
-                        Library Inventory
+                        Library Inventory - Borrow System
                     </div>
+                </div>
+                <div class="popup">
+                    <div class="login">
+                        <div class="loginForm">
+                            <div class="loginHeader">BORROW
+                            </div>
+                            <div><img src="/LibraryInformationMonitoringSystem/assets.img/closebutton.png" alt="X" class="close">
+                            </div>
+                            <div class="loginText">
+                                <form action="php.functions/borrow.inc.php" method="POST">
+                                    <input type="text" name="refid" id="refid" placeholder="Reference ID...">
+                                    <input type="text" name="bid" placeholder="Borrower ID...">
+                                    <a href=""><button type="submit" class="submit" name="borrow">BORROW</button></a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="overlay"></div>
                 </div>
                 <div class="select-area">
                     <div class="table-responsive">
@@ -118,6 +137,7 @@ if (!isset($_SESSION["useruid"])) {
                                     <th>Authors/Publisher</th>
                                     <th>Subject</th>
                                     <th>Quantity</th>
+                                    <th>Request</th>
                                 </tr>
                             </thead>
                         </table>
@@ -141,5 +161,6 @@ if (!isset($_SESSION["useruid"])) {
     </div>
 </body>
 <script src="./js/inventory.jsx"></script>
+<script src="./js/borrow.jsx"></script>
 
 </html>
