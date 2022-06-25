@@ -45,9 +45,14 @@ while ($row = pg_fetch_row($result)) {
     $sub_array[] = $row[4];
     $sub_array[] = $row[5];
     if ($row[4] === 'REL') {
-        $sub_array[] = '<button id="Return">Return</button>';
+        $sub_array[] = '<button id="Return" value="Return">Return</button>';
+    } else if ($row[4] === 'RET') {
+        $sub_array[] = 'Returned';
+    } else if ($row[4] === 'DEN') {
+        $sub_array[] = 'Denied';
     } else {
-        $sub_array[] = '<button id="Release">Release</button><button id="Deny">Deny</button>';
+        $sub_array[] = '<button id="Release" value="Release">Release</button>
+                        <button id="Deny" value="Deny">Deny</button>';
     }
     $data[] = $sub_array;
 }

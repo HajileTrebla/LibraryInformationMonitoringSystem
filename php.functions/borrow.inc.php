@@ -23,7 +23,7 @@ if (isset($_POST["borrow"])) {
               VALUES($1, $2, $3, $4)";
 
     if (!pg_send_query($dbConn, $sqlul)) {
-        header("Location: ../index.php?error=stmtfailed");
+        header("Location: ../borrow.php?error=stmtfailed");
         exit();
     }
 
