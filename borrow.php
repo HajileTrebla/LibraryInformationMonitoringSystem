@@ -2,10 +2,6 @@
 <?php
 session_start();
 $_SESSION["uborrow"] = true;
-if (!isset($_SESSION["useruid"])) {
-    header("Location: index.php?redirect");
-    exit();
-}
 ?>
 <html lang="en">
 

@@ -2,23 +2,23 @@
 --to execute run "\i path" while in the database
 
 --TableReset REMOVE COMMENT TAGS WITH CAUTION AND ONLY WHEN A BACKUP UP TO DATE
-DROP TABLE IF EXISTS lib_transactions_status CASCADE;
-DROP TABLE IF EXISTS lib_transactions_penalties CASCADE;
-DROP TABLE IF EXISTS lib_visitors_details CASCADE;
-DROP TABLE IF EXISTS lib_inventory_changelog CASCADE;
-DROP TABLE IF EXISTS lib_visitors CASCADE;
-DROP TABLE IF EXISTS lib_transactions CASCADE;
-DROP TABLE IF EXISTS lib_faculty CASCADE;
-DROP TABLE IF EXISTS lib_students CASCADE;
-DROP TABLE IF EXISTS lib_users_log CASCADE;
-DROP TABLE IF EXISTS lib_master_list CASCADE;
-DROP TABLE IF EXISTS lib_inventory CASCADE;
-DROP TABLE IF EXISTS lib_transactions_request CASCADE;
-DROP TABLE IF EXISTS lib_inventory_authors CASCADE;
-DROP TABLE IF EXISTS lib_inventory_subjects CASCADE;
-DROP TABLE IF EXISTS lib_inventory_subjects_category CASCADE;;
-DROP TABLE IF EXISTS lib_global_log CASCADE;
-DROP TABLE IF EXISTS lib_users CASCADE;
+--DROP TABLE IF EXISTS lib_transactions_status CASCADE;
+--DROP TABLE IF EXISTS lib_transactions_penalties CASCADE;
+--DROP TABLE IF EXISTS lib_visitors_details CASCADE;
+--DROP TABLE IF EXISTS lib_inventory_changelog CASCADE;
+--DROP TABLE IF EXISTS lib_visitors CASCADE;
+--DROP TABLE IF EXISTS lib_transactions CASCADE;
+--DROP TABLE IF EXISTS lib_faculty CASCADE;
+--DROP TABLE IF EXISTS lib_students CASCADE;
+--DROP TABLE IF EXISTS lib_users_log CASCADE;
+--DROP TABLE IF EXISTS lib_master_list CASCADE;
+--DROP TABLE IF EXISTS lib_inventory CASCADE;
+--DROP TABLE IF EXISTS lib_transactions_request CASCADE;
+--DROP TABLE IF EXISTS lib_inventory_authors CASCADE;
+--DROP TABLE IF EXISTS lib_inventory_subjects CASCADE;
+--DROP TABLE IF EXISTS lib_inventory_subjects_category CASCADE;;
+--DROP TABLE IF EXISTS lib_global_log CASCADE;
+--DROP TABLE IF EXISTS lib_users CASCADE;
 
 --Group 1
 --TableCreation for Login and admin use-case
@@ -64,9 +64,13 @@ CREATE TABLE lib_inventory_subjects(
 --Create Borrower Request Table
 CREATE TABLE lib_transactions_request(
     requestID BIGSERIAL NOT NULL PRIMARY KEY,
+    borrowerID BIGINT NOT NULL,
+    referenceID BIGINT NOT NULL,
     request_status VARCHAR(5) NOT NULL,
     dateProcessed TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
     logID BIGINT NOT NULL UNIQUE,
+    CONSTRAINT fk_borrowerID FOREIGN KEY(borrowerID) REFERENCES lib_master_list(referenceID),
+    CONSTRAINT fk_referenceID FOREIGN KEY(referenceID) REFERENCES lib_inventory(resourceID),
     CONSTRAINT fk_logID FOREIGN KEY(logID) REFERENCES lib_global_log(glogID)
 );
 
