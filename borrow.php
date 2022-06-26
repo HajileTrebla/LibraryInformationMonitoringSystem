@@ -121,7 +121,7 @@ $_SESSION["uborrow"] = true;
                                 <div class="col-md-2">
                                     <input type="button" name="search" id="search" value="Search" class="btn btn-info" />
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-3">
                                     <a href="./ap/borrow-ap.php"><input type="button" value="View Requests" class="btn btn-info" /></a>
                                 </div>
 

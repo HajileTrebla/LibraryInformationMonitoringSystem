@@ -80,7 +80,7 @@ if (!isset($_SESSION["useruid"])) {
                         <br />
                         <div class="row">
                             <div class="input-text">
-                                <div class="col-md-2">
+                                <div class="col-md-3">
                                     <a href="../borrow.php"><input type="button" value="TO BORROW" class="btn btn-info" /></a>
                                 </div>
                                 <div class="col-md-2">

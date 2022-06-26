@@ -48,7 +48,7 @@ while ($row = pg_fetch_row($result)) {
     $sub_array[] = $resc_auth;
     $sub_array[] = $row[4];
     $sub_array[] = $row[5];
-    $sub_array[] = '<a href="#"><button onclick="" id="Borrow">Borrow</button></a>';
+    $sub_array[] = '<a href="#"><button class="tableButton" id="Borrow">Borrow</button></a>';
     $data[] = $sub_array;
 }
 

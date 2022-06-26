@@ -10,6 +10,9 @@ session_start();
     <title>Library Monitoring System</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@600&family=Inter:wght@700&family=Kdam+Thmor+Pro&family=League+Gothic&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/LibraryInformationMonitoringSystem/stylesheets/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,17 +60,6 @@ session_start();
         </div>
         <div class="Wrapper">
             <div class="hero">
-                <div class="homeText">
-                    <div class="line1">
-                        Welcome to
-                    </div>
-                    <div class="line2">
-                        Madre Maria Pia Notari School's
-                    </div>
-                    <div class="line3">
-                        Library Monitoring System
-                    </div>
-                </div>
                 <div class="popup">
                     <div class="login">
                         <div class="loginForm">
@@ -86,62 +78,55 @@ session_start();
                     </div>
                     <div class="overlay"></div>
                 </div>
-                <div class="Wrapper">
-                    <ul class="bottomButtons">
-                        <li><a href="../LibraryInformationMonitoringSystem/borrow.php">Borrow</a></li>
-                        <li><a href="#Register" id="register">Register</a></li>
-                        <li><a href="../LibraryInformationMonitoringSystem/visitorLog.php">Visitor Log</a></li>
-                    </ul>
-                    <div class="Register1" id="registrationForm">
-                        <div class="registerForm1">
-                            <div class="registerHeader1">
-                                <div class="registerHeaderText">REGISTRATION FORM - STUDENT</div>
+                <div class="visitorBG">
+                    <div class="visitorTitle">Visitor's Form
+                        <div class="visitorButtons">
+                            <button type="button" class="unregisteredButton" id="unreg">Unregistered</button>
+                            <button type="button" class="registeredButton" id="reg">Registered</button>
+                        </div>
+                    </div>
+                    <div class="Visitor">
+                        <div class="RegisteredVisitorForm">
+                            <div class="regHeader">
+                                <div class="regTitle">Registered Visitor's Form</div>
                             </div>
-                            <div class="registerBody1">
-                                <form action="php.functions/register.inc.php" method="POST">
-                                    <input type="text" name="fname" placeholder="first-name">
-                                    <input type="text" name="lname" placeholder="last-name">
-                                    <input type="text" name="sec" placeholder="Section">
-                                    <input type="text" name="glvl" placeholder="Year">
-                                    <a href=""><button type="submit" class="registerButton1" name="register-student">REGISTER</button></a>
-                                </form>
+                            <div class="regBody">
+                                <div class="regForm">
+                                    <form>
+                                        <input type="text" name="refid" placeholder="id-number">
+                                        <input type="text" name="tinc" placeholder="teacher-in-charge">
+                                        <button type="submit" class="visitorSubmit1">Submit</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="UnregisteredVisitorForm">
+                            <div class="unregHeader">
+                                <div class="unregTitle">Unregistered Visitor's Form</div>
+                            </div>
+                            <div class="unregBody">
+                                <div class="unregForm">
+                                    <form>
+                                        <input type="text" name="fname" placeholder="first-name">
+                                        <input type="text" name="lname" placeholder="last-name">
+                                        <input type="text" name="year" placeholder="year">
+                                        <input type="text" name="sec" placeholder="section">
+                                        <input type="text" name="tinc" placeholder="teacher-in-charge">
+                                        <button type="submit" class="visitorSubmit1">Submit</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="Register2" id="registrationForm">
-                        <div class="registerForm2">
-                            <div class="registerHeader2">
-                                <div class="registerHeaderText">REGISTRATION FORM - STAFF</div>
-                            </div>
-                            <div class="registerBody2">
-                                <form action="php.functions/register.inc.php" method="POST">
-                                    <input type="text" name="fname" placeholder="first-name">
-                                    <input type="text" name="lname" placeholder="last-name">
-                                    <input type="text" name="facpos" placeholder="position">
-                                    <a href=""><button type="submit" class="registerButton2" name="register-faculty">REGISTER</button></a>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="Footer">
-
-            <div class="left-bar">
-                <div>
-                    ADD EXTRA INFO HERE/LINKS
-                </div>
-            </div>
-            <div class="right-bar">
-                <div>
-                    ADD EXTRA INFO/CONTACTS HERE
                 </div>
             </div>
         </div>
     </div>
+    <div class="Footer">
+        <button type="button" class="back-button" id="back"><span>&#60;</span></button>
+    </div>
+    </div>
 </body>
-<script src="./js/index.jsx"></script>
+<script src="./js/visitor.jsx"></script>
 
 </html>
