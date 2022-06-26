@@ -71,7 +71,7 @@ if (!isset($_SESSION["useruid"])) {
         </div>
         <div class="Wrapper">
             <div class="hero">
-                <div class="mainText">
+                <div class="mainText1">
                     <div class="line2">
                         Library Inventory
                     </div>

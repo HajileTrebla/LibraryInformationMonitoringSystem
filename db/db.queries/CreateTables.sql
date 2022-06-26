@@ -2,7 +2,7 @@
 --to execute run "\i path" while in the database
 
 --TableReset REMOVE COMMENT TAGS WITH CAUTION AND ONLY WHEN A BACKUP UP TO DATE
-DROP TABLE IF EXISTS lib_transactions_status CASCADE;
+--DROP TABLE IF EXISTS lib_transactions_status CASCADE;
 --DROP TABLE IF EXISTS lib_transactions_penalties CASCADE;
 --DROP TABLE IF EXISTS lib_visitors_details CASCADE;
 --DROP TABLE IF EXISTS lib_inventory_changelog CASCADE;
