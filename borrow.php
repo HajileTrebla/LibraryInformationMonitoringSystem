@@ -159,7 +159,7 @@ $_SESSION["uborrow"] = true;
         </div>
     </div>
 </body>
-<script src="./js/inventory.jsx"></script>
+<script src="./js/borrowinv.jsx"></script>
 <script src="./js/borrow.jsx"></script>
 
 </html>

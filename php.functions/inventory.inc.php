@@ -15,7 +15,11 @@ if ($_POST["subj_categ"] !== "All") {
 if (isset($_POST["search"]['value'])) {
     $query .= "AND (resc_title LIKE '%" . $_POST['search']['value'] . "%'
                OR firstName LIKE '%" . $_POST['search']['value'] . "%'
-               OR lastName LIKE '%" . $_POST['search']['value'] . "%' )";
+               OR lastName LIKE '%" . $_POST['search']['value'] . "%' ) ";
+}
+
+if (isset($_POST["bset"])) {
+    $query .= "AND resc_quant > 0 ";
 }
 
 if (isset($_POST["order"])) {
