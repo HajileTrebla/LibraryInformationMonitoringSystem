@@ -1,5 +1,35 @@
 <?php
 
+if (isset($_POST['timeout'])) {
+    $section_type = 4;
+    $date = date("Y-m-d H:i:s a T");
+
+    require_once 'dbh.inc.php';
+    require_once 'functions.inc.php';
+
+    $Vid = $_POST['Vid'];
+
+    $dbConn = getConn();
+
+    $log_desc = "$Vid Left at $date";
+    $log = generateLog($section_type, $log_desc);
+
+    $sqlvd = "UPDATE lib_visitors_details
+              SET timeOut = CURRENT_TIMESTAMP
+              WHERE visitorID = $1";
+
+    if (!pg_send_query($dbConn, $sqlvd)) {
+        header("Location: ../borrow.php?error=stmtfailed");
+        exit();
+    }
+
+    pg_prepare($dbConn, "visit-up", $sqlvd);
+    pg_execute($dbConn, "visit-up", array($Vid));
+
+    header("Location: ../visitorLog.php?visitTimeOut");
+    exit();
+}
+
 if (isset($_POST['regSub'])) {
 
     $section_type = 4;
@@ -25,10 +55,12 @@ if (isset($_POST['regSub'])) {
 
     $Vid = visitLog($fname, $lname, $sec, $year, $tinc, $log, $refid);
 
-    /*if ($Vid != null) {
-        header('Location: ../visitorLog.php?visitSuccess');
+    $_SERVER['visitID'] = (string)$Vid;
+
+    if ($Vid != null) {
+        header("Location: ../visitorLog.php?visitSuccess=$Vid");
         exit();
-    }*/
+    }
 }
 
 if (isset($_POST['uregSub'])) {
@@ -52,8 +84,10 @@ if (isset($_POST['uregSub'])) {
 
     $Vid = visitLog($fname, $lname, $sec, $year, $tinc, $log);
 
-    /*if ($Vid != null) {
-        header('Location: ../visitorLog.php?visitSuccess');
+    $_SERVER['visitID'] = (string)$Vid;
+
+    if ($Vid != null) {
+        header("Location: ../visitorLog.php?visitSuccess=$Vid");
         exit();
-    }*/
+    }
 }

@@ -54,6 +54,9 @@ if (isset($_POST["register-student"])) {
     }
     pg_prepare($dbConn, "regisration", $sql2);
     pg_execute($dbConn, "regisration", array($id, $fname, $lname, $sec, $glvl));
+
+    header("Location: ../index.php?registerSuccess=$id");
+    exit();
 }
 
 if (isset($_POST["register-faculty"])) {
@@ -106,7 +109,8 @@ if (isset($_POST["register-faculty"])) {
     pg_prepare($dbConn, "regisration", $sql2);
     pg_execute($dbConn, "regisration", array($id, $fname, $lname, $facpos));
 
-    header("Location: ../index.php");
+    header("Location: ../index.php?registerSuccess=$id");
+    exit();
 } else {
     header("Location: ../index.php");
     exit();

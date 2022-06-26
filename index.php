@@ -125,8 +125,13 @@ session_start();
                     </div>
                 </div>
             </div>
-
         </div>
+        <?php
+        if (isset($_GET["registerSuccess"])) {
+            $Vid = $_GET["registerSuccess"];
+            echo '<script> alert("Registered ID #:' . $Vid . '");</script>';
+        }
+        ?>
         <div class="Footer">
 
             <div class="left-bar">

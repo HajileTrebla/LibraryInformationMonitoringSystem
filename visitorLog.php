@@ -94,7 +94,7 @@ session_start();
                         <div class="visitorNoBody">
                             <div class="visitorNoForm">
                                 <form action="php.functions/visit.inc.php" method="POST">
-                                    <input type="text" name="refid" placeholder="id-number">
+                                    <input type="text" name="Vid" placeholder="visitor-id">
                                     <button type="submit" class="visitorSubmit3" name="timeout">Time - Out</button>
                                 </form>
                             </div>
@@ -132,6 +132,12 @@ session_start();
                         </div>
                     </div>
                 </div>
+                <?php
+                if (isset($_GET["visitSuccess"])) {
+                    $Vid = $_GET["visitSuccess"];
+                    echo '<script> alert("Visitor #:' . $Vid . '");</script>';
+                }
+                ?>
             </div>
         </div>
     </div>
