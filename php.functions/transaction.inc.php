@@ -39,9 +39,11 @@ function getDue($date)
         $dstr = $date . '+ 1 days';
     }
 
+    echo $dstr . '<br />';
     $due = strtotime($dstr);
+    echo $due . '<br />';
     $due = date('Y-m-d H:i:s', $due);
-    echo $due;
+    echo $due . '<br />';
     return $due;
 }
 
@@ -69,9 +71,10 @@ function transactInit($reqid, $date, $log)
     $rescid = $trc_result[1];
 
     $due = getDue($date);
+
     $sqlt = "INSERT
              INTO lib_transactions(borrowerID, resourceID, dateDue, requestID, logID)
-             VALUES($1,$2,(SELECT TO_TIMESTAMP($3, 'YYYY-MM-DD HH:MI:SS')),$4,$5);";
+             VALUES($1,$2,(SELECT TO_TIMESTAMP($3, 'YYYY-MM-DD HH24:MI:SS')),$4,$5);";
 
     if (!pg_send_query($dbConn, $sqlt)) {
         header("Location: ../ap/borrow-ap.php?error=stmtfailed");
@@ -81,5 +84,3 @@ function transactInit($reqid, $date, $log)
     pg_prepare($dbConn, "", $sqlt);
     pg_execute($dbConn, "", array($bid, $rescid, $due, $reqid, $log));
 }
-
-echo gettype(getDue(date('Y-m-d H:i:s')));

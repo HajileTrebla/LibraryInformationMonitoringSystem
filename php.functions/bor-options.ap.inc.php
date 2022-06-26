@@ -18,6 +18,8 @@ if ($_POST["option"] === 'Release') {
     $log_desc = "Request # $reqid is has been Released on $date";
     $log = generateLog($section_type, $log_desc);
 
+    $date = date('Y-m-d H:i:s');
+
     echo "RID = " . $reqid . '<br />';
     echo "RID = " . gettype($reqid) . '<br />';
     $reqid = (int)$reqid;
@@ -26,7 +28,6 @@ if ($_POST["option"] === 'Release') {
     $Tid = getTid($reqid, 'reqid');
     echo "TID = " . $Tid . '<br />';
 
-    $date = date('Y-m-d H:i:s');
 
     $sqlin = "INSERT 
               INTO lib_transactions_status(transactionID, status, dateReleased, logID_rel)
