@@ -18,8 +18,13 @@ if ($_POST["option"] === 'Release') {
     $log_desc = "Request # $reqid is has been Released on $date";
     $log = generateLog($section_type, $log_desc);
 
+    echo "RID = " . $reqid . '<br />';
+    echo "RID = " . gettype($reqid) . '<br />';
+    $reqid = (int)$reqid;
     transactInit($reqid, $date, $log);
+    echo "RID = " . gettype($reqid) . '<br />';
     $Tid = getTid($reqid, 'reqid');
+    echo "TID = " . $Tid . '<br />';
 
     $date = date('Y-m-d H:i:s');
 
@@ -96,7 +101,7 @@ if ($_POST["option"] === 'Release') {
     $date = date('Y-m-d H:i:s');
 
     $sqlin = "UPDATE lib_transactions_status 
-              SET status = $1, logID_ret = $2
+              SET status = $1, logID_ret = $2, dateReturned = (SELECT CURRENT_TIMESTAMP) 
               WHERE transactionID = $3";
 
     if (!pg_send_query($dbConn, $sqlin)) {
