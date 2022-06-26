@@ -1,4 +1,29 @@
---path = C:/xampp/htdocs/LibraryInformationMonitoringSystem/db/db.queries/inventory/math.sql
+--command: \i C:/xampp/htdocs/LibraryInformationMonitoringSystem/db/db.queries/inventory/3_math.sql
+
+--categoryID
+INSERT INTO lib_inventory_subjects_category(categName)
+    VALUES("GENERAL KNOWLEDGE");--1
+INSERT INTO lib_inventory_subjects_category(categName)
+    VALUES("LANGUAGE");--2
+INSERT INTO lib_inventory_subjects_category(categName)
+    VALUES("MATH");--3
+INSERT INTO lib_inventory_subjects_category(categName)
+    VALUES("SCIENCE");--4
+INSERT INTO lib_inventory_subjects_category(categName)
+    VALUES("MAPEH");--5
+INSERT INTO lib_inventory_subjects_category(categName)
+    VALUES("AP");--6
+INSERT INTO lib_inventory_subjects_category(categName)
+    VALUES("ITECH");--7
+INSERT INTO lib_inventory_subjects_category(categName)
+    VALUES("TLE");--8
+INSERT INTO lib_inventory_subjects_category(categName)
+    VALUES("RELIGION");--9
+INSERT INTO lib_inventory_subjects_category(categName)
+    VALUES("CHARACTER EDUCATION");--10
+INSERT INTO lib_inventory_subjects_category(categName)
+    VALUES("THESIS/RESEARCH");--11
+
 
 --subjectID
 
@@ -23,44 +48,44 @@ INSERT INTO lib_inventory_subjects(categID, subjectName)
 
 -- MATHEMATICS authors
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('Scott, Foresman and Company',NULL);--50
+    VALUES('Scott, Foresman and Company',NULL);--94
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('Harcourt Brace Jovanovich, Publishers',NULL);--51
+    VALUES('Harcourt Brace Jovanovich, Publishers',NULL);--95
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('Abiva Publishing House, Inc.',NULL);--52
+    VALUES('Abiva Publishing House, Inc.',NULL);--96
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('Vida V.','Antonio');--53
+    VALUES('Vida V.','Antonio');--97
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('Cristobal M.','Pagoso');--54
+    VALUES('Cristobal M.','Pagoso');--98
 
 
 -- COLLEGE ALGEBRA authors
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('Caroline K.','Rodriguez');--55
+    VALUES('Caroline K.','Rodriguez');--99
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('Catalina Dinio','Mijares');--56
+    VALUES('Catalina Dinio','Mijares');--100
 
 
 -- STATISTICS author
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('Francisco A.','Febre, Jr.');--57
+    VALUES('Francisco A.','Febre, Jr.');--101
 
 
 -- LOGARITHMS AND TRIGONOMETRY author
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('C.','Attwood');--58
+    VALUES('C.','Attwood');--102
 
 -- GLENCOE author
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('Berchie','Holliday');--59
+    VALUES('Berchie','Holliday');--103
 
 -- HOLT MCDOUGAL authors
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('Ron','Larson');--60
+    VALUES('Ron','Larson');--104
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('Laurie','Boswell');--61
+    VALUES('Laurie','Boswell');--105
 INSERT INTO lib_inventory_authors(firstName, lastName)
-    VALUES('Lee','Stiff');--62
+    VALUES('Lee','Stiff');--106
 
 
 
@@ -68,58 +93,56 @@ INSERT INTO lib_inventory_authors(firstName, lastName)
 
 -- ALGEBRA inventory
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(003515, 'ALGEBRA Metric Edition',42,33,NULL);--264
+    VALUES(003515, 'ALGEBRA Metric Edition',42,33,1);--264
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(000360, 'Algebra and Trigonometry Metric Edition',42,33,NULL);--265
+    VALUES(000360, 'Algebra and Trigonometry Metric Edition',42,33,1);--265
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(002719, 'Algebra',42,33,NULL);--266
+    VALUES(002719, 'Algebra',42,33,1);--266
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(002727, 'Geometry Metric Edition',42,33,NULL);--267
+    VALUES(002727, 'Geometry Metric Edition',42,33,1);--267
 
 
 -- MATHEMATICS inventory
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(000223, 'Mathematics Around Us',50,34,2);--268
+    VALUES(000223, 'Mathematics Around Us',94,34,2);--268
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(000221, 'Mathematics Today',51,34,NULL);--269
+    VALUES(000221, 'Mathematics Today',95,34,1);--269
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(005892, 'Modern Mathematics',52,34,NULL);--270
+    VALUES(005892, 'Modern Mathematics',96,34,1);--270
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(036137, 'New Mathematics Made Easy',53,34,NULL);--271
+    VALUES(036137, 'New Mathematics Made Easy',97,34,2);--271
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(032, '(2) New Mathematics Made Easy',53,34,NULL);--272
-INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(000431, 'Business Mathematics',54,34,NULL);--273
+    VALUES(000431, 'Business Mathematics',98,34,1);--273
 
 -- COLLEGE ALGEBRA inventory
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(028254, 'College Algebra',55,35,NULL);--274
+    VALUES(028254, 'College Algebra',99,35,1);--274
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(028255, 'College Algebra Revised Edition',56,35,NULL);--275
+    VALUES(028255, 'College Algebra Revised Edition',100,35,1);--275
 
 
 -- STATISTICS inventory
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(000252, 'Introduction to Statistics',57,36,NULL);--276
+    VALUES(000252, 'Introduction to Statistics',101,36,1);--276
 
 
 -- LOGARITHMS AND TRIGONOMETRY inventory 
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(020600, 'Logarithms and Trigonometric Tables',58,37,NULL);--277
+    VALUES(020600, 'Logarithms and Trigonometric Tables',102,37,1);--277
 
 
 -- GLENCOE inventory
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(00000410, 'Advanced Mathematical Concepts Precalculus with Applications',59,38,NULL);--278
+    VALUES(00000410, 'Advanced Mathematical Concepts Precalculus with Applications',103,38,1);--278
 
 
 -- HOLT MCDOUGAL inventory
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(00005343, 'ALGEBRA 1 Concepts and Skills',60,39,NULL);--279
+    VALUES(00005343, 'ALGEBRA 1 Concepts and Skills',104,39,1);--279
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(00005586, 'ALGRBRA 2 Concepts and Skills',61,39,NULL);--280
+    VALUES(00005586, 'ALGRBRA 2 Concepts and Skills',105,39,1);--280
 INSERT INTO lib_inventory(resourceID,bookTitle,authorID,subjectID,quantity)
-    VALUES(00006749, 'GEOMETRY Concepts and Skills',62,39,NULL);--281
+    VALUES(00006749, 'GEOMETRY Concepts and Skills',106,39,1);--281
 
 
 
