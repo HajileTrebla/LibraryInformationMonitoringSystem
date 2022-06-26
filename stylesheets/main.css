@@ -645,7 +645,7 @@ html{
 }
 
 .visitorBG{
-    background: rgba(0, 0, 0, 0.5);
+    
 }
 
 .visitorButtons{
@@ -719,14 +719,14 @@ html{
 .unregBody{
     background: white;
     width: 100%;
-    height: 500px;
+    height: 200px;
     position: relative;
     bottom: 1.3em;
 }
 
 .unregForm{
     position: relative;
-    top: 6em;
+    top: 5em;
 }
 
 .visitorSubmit1{
@@ -774,14 +774,14 @@ html{
 .regBody{
     background: white;
     width: 100%;
-    height: 500px;
+    height: 200px;
     position: relative;
     bottom: 1.3em;
 }
 
 .regForm{
     position: relative;
-    top: 9em;
+    top: 7em;
 }
 
 .visitorSubmit2{
@@ -808,5 +808,69 @@ html{
 
 .RegisteredVisitorForm{
     position: relative;
-    top: 20em;
+}
+
+.visitorHeader{
+    position: relative;
+    margin-top: 30%;
+    width: 100%;
+    height: 117px;
+    
+    background: #100B0B;
+    border-bottom: 7px solid #2C7A56;
+}
+
+.numberTitle{
+    color: white;
+    font-family: "Grandstander", cursive;
+    text-align: center;
+    position: relative;
+    top: 1.1em;
+    font-size: 40px;
+
+}
+
+.visitorNoBody{
+    background: white;
+    width: 100%;
+    height: 100px;
+    position: relative;
+    bottom: 1.3em;
+}
+
+.visitorNoForm{
+    position: relative;
+    top: 6em;
+}
+
+.visitorSubmit3{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none;
+    background: #2C7A56;
+    border-radius: 1.4em;
+    padding: 0.7em;
+    width: 7em;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    border: none;
+    position: relative; 
+    top: 5em;
+}
+
+.visitorSubmit3:hover{
+    background: black;
+    cursor: pointer;
+}
+
+.UnregisteredVisitorForm{
+    position: relative;
+    bottom: 17em;
+}
+
+.VisitorNumber{
+    position: relative;
+    top: 15.5em;
 }

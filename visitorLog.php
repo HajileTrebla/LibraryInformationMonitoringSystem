@@ -85,42 +85,56 @@ session_start();
                             <button type="button" class="registeredButton" id="reg">Registered</button>
                         </div>
                     </div>
-                    <div class="Visitor">
-                        <div class="RegisteredVisitorForm">
-                            <div class="regHeader">
-                                <div class="regTitle">Registered Visitor's Form</div>
-                            </div>
-                            <div class="regBody">
-                                <div class="regForm">
-                                    <form action="php.functions/visit.inc.php" method="POST">
-                                        <input type="text" name="refid" placeholder="id-number">
-                                        <input type="text" name="tinc" placeholder="teacher-in-charge">
-                                        <button type="submit" class="visitorSubmit1" name="regSub">Submit</button>
-                                    </form>
-                                </div>
+                </div>
+                <div class="Visitor">
+                    <div class="VisitorNumber">
+                        <div class="visitorHeader">
+                            <div class="numberTitle">Your Visitor Number:</div>
+                        </div>
+                        <div class="visitorNoBody">
+                            <div class="visitorNoForm">
+                                <form action="php.functions/visit.inc.php" method="POST">
+                                    <input type="text" name="refid" placeholder="id-number">
+                                    <button type="submit" class="visitorSubmit3" name="timeout">Time - Out</button>
+                                </form>
                             </div>
                         </div>
-                        <div class="UnregisteredVisitorForm">
-                            <div class="unregHeader">
-                                <div class="unregTitle">Unregistered Visitor's Form</div>
+                    </div>
+                    <div class="RegisteredVisitorForm">
+                        <div class="regHeader">
+                            <div class="regTitle">Registered Visitor's Form</div>
+                        </div>
+                        <div class="regBody">
+                            <div class="regForm">
+                                <form action="php.functions/visit.inc.php" method="POST">
+                                    <input type="text" name="refid" placeholder="id-number">
+                                    <input type="text" name="tinc" placeholder="teacher-in-charge">
+                                    <button type="submit" class="visitorSubmit1" name="regSub">Submit</button>
+                                </form>
                             </div>
-                            <div class="unregBody">
-                                <div class="unregForm">
-                                    <form action="php.functions/visit.inc.php" method="POST">
-                                        <input type="text" name="fname" placeholder="first-name">
-                                        <input type="text" name="lname" placeholder="last-name">
-                                        <input type="text" name="sec" placeholder="section">
-                                        <input type="text" name="year" placeholder="year">
-                                        <input type="text" name="tinc" placeholder="teacher-in-charge">
-                                        <button type="submit" class="visitorSubmit1" name="uregSub">Submit</button>
-                                    </form>
-                                </div>
+                        </div>
+                    </div>
+                    <div class="UnregisteredVisitorForm">
+                        <div class="unregHeader">
+                            <div class="unregTitle">Unregistered Visitor's Form</div>
+                        </div>
+                        <div class="unregBody">
+                            <div class="unregForm">
+                                <form action="php.functions/visit.inc.php" method="POST">
+                                    <input type="text" name="fname" placeholder="first-name">
+                                    <input type="text" name="lname" placeholder="last-name">
+                                    <input type="text" name="sec" placeholder="section">
+                                    <input type="text" name="year" placeholder="year">
+                                    <input type="text" name="tinc" placeholder="teacher-in-charge">
+                                    <button type="submit" class="visitorSubmit1" name="uregSub">Submit</button>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <div class="Footer">
         <button type="button" class="back-button" id="back"><span>&#60;</span></button>
