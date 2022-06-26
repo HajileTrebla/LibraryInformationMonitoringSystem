@@ -135,7 +135,7 @@ session_start();
                 <?php
                 if (isset($_GET["visitSuccess"])) {
                     $Vid = $_GET["visitSuccess"];
-                    echo '<script> alert("Visitor #:' . $Vid . '");</script>';
+                    echo '<script> alert("PLEASE TAKE NOTE OF THIS ID NUMBER Visitor #: ' . $Vid . '");</script>';
                 }
                 ?>
             </div>

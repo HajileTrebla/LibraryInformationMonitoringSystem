@@ -129,7 +129,7 @@ session_start();
         <?php
         if (isset($_GET["registerSuccess"])) {
             $Vid = $_GET["registerSuccess"];
-            echo '<script> alert("Registered ID #:' . $Vid . '");</script>';
+            echo '<script> alert("PLEASE TAKE NOTE OF THIS ID NUMBER Registered ID #:' . $Vid . '");</script>';
         }
         ?>
         <div class="Footer">
