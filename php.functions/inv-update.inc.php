@@ -47,5 +47,17 @@ function invUp($Tid, $opt)
     pg_prepare($dbConn, "upinv", $sqlr);
     pg_execute($dbConn, "upinv", array($Rid));
 
-    generateLog($section_type, $log_desc);
+    $log = generateLog($section_type, $log_desc);
+
+    $sqllog = "INSERT 
+               INTO lib_inventory_changelog(logID, resourceID)
+               VALUES($1,$2)";
+
+    if (!pg_send_query($dbConn, $sqllog)) {
+        header("Location: ../ap/borrow-ap.php?error=stmtfailed");
+        exit();
+    }
+
+    pg_prepare($dbConn, "invlog", $sqllog);
+    pg_execute($dbConn, "invlog", array($log, $Rid));
 }
