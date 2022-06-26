@@ -43,7 +43,6 @@ session_start();
                         }
                         ?>
 
-                        <li><a href="../LibraryInformationMonitoringSystem/visitorLog.php">Visitor Log</a></li>
                         <li><a href="../LibraryInformationMonitoringSystem/about.php">About</a></li>
                         <?php
                         if (isset($_SESSION["useruid"])) {
