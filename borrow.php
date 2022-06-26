@@ -80,7 +80,7 @@ $_SESSION["uborrow"] = true;
                             </div>
                             <div class="loginText">
                                 <form action="php.functions/borrow.inc.php" method="POST">
-                                    <input type="text" name="refid" id="refid" placeholder="Reference ID...">
+                                    <input type="text" name="refid" id="refid" readonly>
                                     <input type="text" name="bid" placeholder="Borrower ID...">
                                     <a href=""><button type="submit" class="submit" name="borrow">BORROW</button></a>
                                 </form>

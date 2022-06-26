@@ -5,7 +5,8 @@
 DROP VIEW IF EXISTS records_view_byoldest;
 DROP VIEW IF EXISTS records_view_byrecent;
 DROP VIEW IF EXISTS inventory_view;
-DROP VIEW IF EXISTS transaction_request_view;
+DROP VIEW IF EXISTS transactions_request_view_s;
+DROP VIEW IF EXISTS transactions_request_view_f;
 
 --Create Views
 --Create View for Inventory
@@ -16,10 +17,17 @@ CREATE VIEW inventory_view as
     ORDER BY n.resourceID ASC;
 
 --Create View for Pending Borrow
-CREATE VIEW transaction_request_view as
-    SELECT r.requestID as resc_id, i.bookTitle as resc_title, s.lastName as lastName, s.firstName as firstName, r.request_status, r.dateprocessed
-    FROM lib_transactions_request r, lib_master_list m, lib_inventory i, lib_students s, lib_faculty f
-    WHERE r.referenceID = i.resourceID AND r.borrowerID = m.referenceID AND (m.referenceID = s.studentID OR m.referenceID = f.facultyID)
+CREATE VIEW transactions_request_view_s as
+    SELECT r.requestID as resc_id, i.bookTitle as resc_title, s.lastName as lastName, s.firstName as firstName, r.request_status as request_status, r.dateprocessed as dateprocessed
+    FROM lib_transactions_request r, lib_master_list m, lib_inventory i, lib_students s
+    WHERE r.referenceID = i.resourceID AND r.borrowerID < 110000 AND r.borrowerID = m.referenceID AND r.borrowerID = s.studentID
+    ORDER BY r.requestID DESC;
+
+--Create View for Pending Borrow
+CREATE VIEW transactions_request_view_f as
+    SELECT r.requestID as resc_id, i.bookTitle as resc_title, f.lastName as lastName, f.firstName as firstName, r.request_status as request_status, r.dateprocessed as dateprocessed
+    FROM lib_transactions_request r, lib_master_list m, lib_inventory i, lib_faculty f
+    WHERE r.referenceID = i.resourceID AND r.borrowerID > 110000 AND r.borrowerID = m.referenceID AND m.referenceID = f.facultyID
     ORDER BY r.requestID DESC;
 
 --Create View for Report History / Records by oldest

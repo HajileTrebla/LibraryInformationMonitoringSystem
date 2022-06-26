@@ -75,24 +75,6 @@ if (!isset($_SESSION["useruid"])) {
                         Library Inventory - Borrow Requests
                     </div>
                 </div>
-                <div class="popup">
-                    <div class="login">
-                        <div class="loginForm">
-                            <div class="loginHeader">BORROW
-                            </div>
-                            <div><img src="/LibraryInformationMonitoringSystem/assets.img/closebutton.png" alt="X" class="close">
-                            </div>
-                            <div class="loginText">
-                                <form action="php.functions/borrow.inc.php" method="POST">
-                                    <input type="text" name="refid" id="refid" placeholder="Reference ID...">
-                                    <input type="text" name="bid" placeholder="Borrower ID...">
-                                    <a href=""><button type="submit" class="submit" name="borrow">BORROW</button></a>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="overlay"></div>
-                </div>
                 <div class="select-area">
                     <div class="table-responsive">
                         <br />
@@ -101,7 +83,12 @@ if (!isset($_SESSION["useruid"])) {
                                 <div class="col-md-2">
                                     <a href="../borrow.php"><input type="button" value="TO BORROW" class="btn btn-info" /></a>
                                 </div>
-
+                                <div class="col-md-2">
+                                    <input type="button" id="STUDENT" value="STUDENT" class="btn btn-info" />
+                                </div>
+                                <div class="col-md-2">
+                                    <input type="button" id="FACULTY" value="FACULTY" class="btn btn-info" />
+                                </div>
                             </div>
                         </div>
                         <br />
@@ -109,8 +96,8 @@ if (!isset($_SESSION["useruid"])) {
                             <thead>
                                 <tr>
                                     <th>Request ID</th>
-                                    <th>Borrower Name</th>
                                     <th>Resource Name</th>
+                                    <th>Borrower Name</th>
                                     <th>Status</th>
                                     <th>Date Sent</th>
                                     <th>Option</th>
@@ -137,6 +124,5 @@ if (!isset($_SESSION["useruid"])) {
     </div>
 </body>
 <script src="../js/borrow.ap.jsx"></script>
-<script src="../js/borrow.jsx"></script>
 
 </html>
