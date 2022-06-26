@@ -10,7 +10,7 @@ $(document).ready(function(){
                 data : {
                     subj_categ:subj_categ
                 }
-            },
+            }
     });
     }
     $('#search').click(function(){

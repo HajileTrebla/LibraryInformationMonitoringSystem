@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
 session_start();
 if (!isset($_SESSION["useruid"])) {
@@ -58,20 +57,20 @@ if (!isset($_SESSION["useruid"])) {
                     <ul class="Menu">
                         <?php
                         if (isset($_SESSION["useruid"])) {
-                            echo '<li><a href="../LibraryInformationMonitoringSystem/php.functions/logout.inc.php" class="button" id="Logout-button">Logout</a></li>';
+                            echo '<li><a href="../php.functions/logout.inc.php" class="button" id="Logout-button">Logout</a></li>';
                         } else {
                             echo '<li><a href="#" class="button" id="Login-button">Login</a></li>';
                         }
                         ?>
 
-                        <li><a href="../LibraryInformationMonitoringSystem/about.php">About</a></li>
+                        <li><a href="../about.php">About</a></li>
                         <?php
                         if (isset($_SESSION["useruid"])) {
-                            echo '<li><a href="../LibraryInformationMonitoringSystem/inventory.php">Inventory</a></li>';
-                            echo '<li><a href="../LibraryInformationMonitoringSystem/records.php">Records</a></li>';
+                            echo '<li><a href="../inventory.php">Inventory</a></li>';
+                            echo '<li><a href="../records.php">Records</a></li>';
                         }
                         ?>
-                        <li><a href="../LibraryInformationMonitoringSystem/index.php">Home</a></li>
+                        <li><a href="../index.php">Home</a></li>
                     </ul>
                 </div>
             </div>
@@ -80,7 +79,7 @@ if (!isset($_SESSION["useruid"])) {
             <div class="hero">
                 <div class="mainText1">
                     <div class="line2">
-                        Library Inventory
+                        Transaction Record
                     </div>
                 </div>
                 <div class="select-area">
@@ -89,34 +88,7 @@ if (!isset($_SESSION["useruid"])) {
                         <div class="row">
                             <div class="input-text">
                                 <div class="col-md-2">
-                                    <label for="subj_categ">Category</label>
-                                    <select name="subj_categ" id="subj_categ">
-                                        <option value="All">All</option>
-                                        <?php
-                                        require_once "./php.functions/dbh.inc.php";
-
-                                        $dbConn = getConn();
-
-                                        $sql = "SELECT * FROM lib_inventory_subjects_category;";
-
-                                        $result = pg_query($dbConn, $sql);
-                                        if (!$result) {
-                                            echo "An Error Occured!\n";
-                                            exit();
-                                        }
-
-                                        while ($categName = pg_fetch_row($result)) {
-                                            echo "<option value='$categName[1]'>$categName[1]</option>";
-                                            echo "<br />";
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="button" name="search" id="search" value="Search" class="btn btn-info" />
-                                </div>
-                                <div class="col-md-3">
-                                    <a href="./records.formats/records-fullinv.php"><input type="button" name="return" id="return" value="Inventory Records" class="btn btn-info" /></a> 
+                                   <a href="../records.php"><input type="button" name="return" id="return" value="To Records" class="btn btn-info" /></a> 
                                 </div>
 
                             </div>
@@ -125,13 +97,37 @@ if (!isset($_SESSION["useruid"])) {
                         <table id="inventory_data" class="table table-bordered table-striped dt-responsive nowrap">
                             <thead>
                                 <tr>
-                                    <th>Resource ID</th>
+                                    <th>Transaction ID</th>
+                                    <th>Borrower ID</th>
                                     <th>Resource Name</th>
-                                    <th>Authors/Publisher</th>
-                                    <th>Subject</th>
-                                    <th>Quantity</th>
+                                    <th>Date Released</th>
+                                    <th>Date Returned</th>
                                 </tr>
                             </thead>
+                            <tbody>
+<?php
+require_once '../php.functions/dbh.inc.php';
+require_once '../php.functions/functions.inc.php';
+
+$dbConn = getConn();
+
+$sql = "SELECT * FROM transactions_view";
+
+$result = pg_query($dbConn, $sql);
+
+while ($row = pg_fetch_row($result)) {
+    echo "
+        <tr>
+            <th>$row[0]</th>
+            <th>$row[1]</th>
+            <th>$row[2]</th>
+            <th>$row[3]</th>
+            <th>$row[4]</th>
+        </tr>
+";
+}
+?>
+                            </tbody>
                         </table>
                     </div>
 
@@ -152,6 +148,6 @@ if (!isset($_SESSION["useruid"])) {
         </div>
     </div>
 </body>
-<script src="./js/inventory.jsx"></script>
+<script src="../js/invrec.jsx"></script>
 
 </html>
