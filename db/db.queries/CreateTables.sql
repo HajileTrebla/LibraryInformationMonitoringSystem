@@ -2,7 +2,7 @@
 --to execute run "\i path" while in the database
 
 --TableReset REMOVE COMMENT TAGS WITH CAUTION AND ONLY WHEN A BACKUP UP TO DATE
-DROP TABLE IF EXISTS lib_transactions_status CASCADE;
+--DROP TABLE IF EXISTS lib_transactions_status CASCADE;
 --DROP TABLE IF EXISTS lib_transactions_penalties CASCADE;
 --DROP TABLE IF EXISTS lib_visitors_details CASCADE;
 --DROP TABLE IF EXISTS lib_inventory_changelog CASCADE;
@@ -186,7 +186,7 @@ CREATE TABLE lib_transactions_penalties(
 CREATE TABLE lib_transactions_status(
     transactionID BIGINT NOT NULL,
     status VARCHAR(5) NOT NULL,
-    dateReleased TIMESTAMP,
+    dateReleased TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     dateReturned TIMESTAMP,
     logID_rel BIGINT NOT NULL UNIQUE,
     logID_ret BIGINT UNIQUE,
