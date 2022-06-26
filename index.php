@@ -89,7 +89,7 @@ session_start();
                 <div class="Wrapper">
                     <ul class="bottomButtons">
                         <li><a href="../LibraryInformationMonitoringSystem/borrow.php">Borrow</a></li>
-                        <li><a href="#Register" id="register">Register</a></li>
+                        <li><a href="#registrationForm">Register</a></li>
                         <li><a href="../LibraryInformationMonitoringSystem/visitorLog.php">Visitor Log</a></li>
                     </ul>
                     <div class="Register1" id="registrationForm">
