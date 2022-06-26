@@ -17,8 +17,8 @@ function getTid($opt, $set)
         exit();
     }
 
-    pg_prepare($dbConn, "", $sql);
-    $result = pg_execute($dbConn, "", array($opt));
+    pg_prepare($dbConn, "getTid", $sql);
+    $result = pg_execute($dbConn, "getTid", array($opt));
 
     $tidrow = pg_fetch_row($result);
     $Tid = $tidrow[0];
@@ -62,8 +62,8 @@ function transactInit($reqid, $date, $log)
         exit();
     }
 
-    pg_prepare($dbConn, "", $sqlr);
-    $tr_result = pg_execute($dbConn, "", array($reqid));
+    pg_prepare($dbConn, "gettr", $sqlr);
+    $tr_result = pg_execute($dbConn, "gettr", array($reqid));
 
     $trc_result = pg_fetch_row($tr_result);
 
@@ -81,6 +81,6 @@ function transactInit($reqid, $date, $log)
         exit();
     }
 
-    pg_prepare($dbConn, "", $sqlt);
-    pg_execute($dbConn, "", array($bid, $rescid, $due, $reqid, $log));
+    pg_prepare($dbConn, "transactInit", $sqlt);
+    pg_execute($dbConn, "transactInit", array($bid, $rescid, $due, $reqid, $log));
 }

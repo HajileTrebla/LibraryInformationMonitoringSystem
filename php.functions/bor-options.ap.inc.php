@@ -10,6 +10,7 @@ if ($_POST["option"] === 'Release') {
     require_once 'dbh.inc.php';
     require_once 'functions.inc.php';
     require_once 'transaction.inc.php';
+    require_once 'inv-update.inc.php';
 
     $dbConn = getConn();
 
@@ -20,14 +21,9 @@ if ($_POST["option"] === 'Release') {
 
     $date = date('Y-m-d H:i:s');
 
-    echo "RID = " . $reqid . '<br />';
-    echo "RID = " . gettype($reqid) . '<br />';
     $reqid = (int)$reqid;
     transactInit($reqid, $date, $log);
-    echo "RID = " . gettype($reqid) . '<br />';
     $Tid = getTid($reqid, 'reqid');
-    echo "TID = " . $Tid . '<br />';
-
 
     $sqlin = "INSERT 
               INTO lib_transactions_status(transactionID, status, dateReleased, logID_rel)
@@ -40,6 +36,8 @@ if ($_POST["option"] === 'Release') {
 
     pg_prepare($dbConn, "release-res", $sqlin);
     pg_execute($dbConn, "release-res", array($Tid, $status, $log));
+
+    invUp($Tid, $status);
 
     $sqlul = "UPDATE lib_transactions_request
              SET request_status = 'REL'   
@@ -90,10 +88,11 @@ if ($_POST["option"] === 'Release') {
     require_once 'dbh.inc.php';
     require_once 'functions.inc.php';
     require_once 'transaction.inc.php';
+    require_once 'inv-update.inc.php';
 
     $dbConn = getConn();
 
-    $log_desc = "Request # $reqid is has been Returned on $date";
+    $log_desc = "Request # $reqid has been Returned on $date";
     $log = generateLog($section_type, $log_desc);
 
     $Tid = getTid($reqid, 'reqid');
@@ -110,8 +109,10 @@ if ($_POST["option"] === 'Release') {
         exit();
     }
 
-    pg_prepare($dbConn, "release-res", $sqlin);
-    pg_execute($dbConn, "release-res", array($status, $log, $Tid));
+    pg_prepare($dbConn, "return-res", $sqlin);
+    pg_execute($dbConn, "return-res", array($status, $log, $Tid));
+
+    invUp($Tid, $status);
 
     $sqlul = "UPDATE lib_transactions_request
              SET request_status = 'RET'   

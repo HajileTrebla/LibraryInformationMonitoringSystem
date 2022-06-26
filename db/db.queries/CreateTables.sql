@@ -35,7 +35,7 @@ CREATE TABLE lib_users(
 CREATE TABLE lib_global_log(
     glogID BIGSERIAL NOT NULL PRIMARY KEY,
     section_type INT,
-    log_desc TEXT,
+    log_desc TEXT UNIQUE,
     date_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL 
 );
 
@@ -184,7 +184,7 @@ CREATE TABLE lib_transactions_penalties(
 
 --Create transaction status
 CREATE TABLE lib_transactions_status(
-    transactionID BIGINT NOT NULL,
+    transactionID BIGINT NOT NULL UNIQUE,
     status VARCHAR(5) NOT NULL,
     dateReleased TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     dateReturned TIMESTAMP,
