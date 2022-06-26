@@ -90,6 +90,9 @@ if (!isset($_SESSION["useruid"])) {
                                 <div class="col-md-2">
                                    <a href="../records.php"><input type="button" name="return" id="return" value="To Records" class="btn btn-info" /></a> 
                                 </div>
+                                <div class="col-md-2">
+                                   <a href="../records.formats/records-maslistf.php"><input type="button" name="change" id="change" value="Faculty" class="btn btn-info" /></a> 
+                                </div>
 
                             </div>
                         </div>
@@ -97,12 +100,10 @@ if (!isset($_SESSION["useruid"])) {
                         <table id="inventory_data" class="table table-bordered table-striped dt-responsive nowrap">
                             <thead>
                                 <tr>
-                                    <th>Visitor ID</th>
+                                    <th>Registered ID Number</th>
                                     <th>Name</th>
                                     <th>Year and Section</th>
-                                    <th>Teacher in Charge</th>
-                                    <th>Time In</th>
-                                    <th>Time Out</th>
+                                    <th>Register Date</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -112,7 +113,7 @@ require_once '../php.functions/functions.inc.php';
 
 $dbConn = getConn();
 
-$sql = "SELECT * FROM visitor_view";
+$sql = "SELECT * FROM masterlist_student_view";
 
 $result = pg_query($dbConn, $sql);
 
@@ -121,10 +122,8 @@ while ($row = pg_fetch_row($result)) {
         <tr>
             <th>$row[0]</th>
             <th>$row[1] $row[2]</th>
-            <th>year $row[4] section $row[3]</th>
+            <th>year $row[3] section $row[4]</th>
             <th>$row[5]</th>
-            <th>$row[6]</th>
-            <th>$row[7]</th>
         </tr>
 ";
 }

@@ -100,7 +100,7 @@ if (!isset($_SESSION["useruid"])) {
                             <li><a href="./records.formats/records-fullinv.php"><button type="submit" class="recButton" name="fullinv">Full Inventory</button></li></a>
                             <li><a href="./records.formats/records-trsc.php"><button type="submit" class="recButton" name="trsc">Transactions</button></li></a>
                             <li><a href="./records.formats/records-visit.php"><button type="submit" class="recButton" name="visit">Visitor Log</button></li></a>
-                            <li><a href="./records.formats/records-invCh.php"><button type="submit" class="recButton" name="invCh">Inventory Changelog</button></li></a>
+                            <!--<li><a href="./records.formats/records-invCh.php"><button type="submit" class="recButton" name="invCh">Inventory Changelog</button></li></a>--!>
                             <li><a href="./records.formats/records-maslist.php"><button type="submit" class="recButton" name="maslist">Master List</button></li></a>
                             <li><a href="./records.formats/records-glog.php"><button type="submit" class="recButton" name="glog">Global Log</button></li></a>
                         </ul>

@@ -79,7 +79,7 @@ if (!isset($_SESSION["useruid"])) {
             <div class="hero">
                 <div class="mainText1">
                     <div class="line2">
-                        Visitor Record
+                        Inventory Log Record
                     </div>
                 </div>
                 <div class="select-area">
@@ -112,7 +112,7 @@ require_once '../php.functions/functions.inc.php';
 
 $dbConn = getConn();
 
-$sql = "SELECT * FROM visitor_view";
+$sql = "SELECT * FROM lib_inventory_changelog";
 
 $result = pg_query($dbConn, $sql);
 

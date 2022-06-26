@@ -18,6 +18,7 @@
 --DROP TABLE IF EXISTS lib_inventory_subjects CASCADE;
 --DROP TABLE IF EXISTS lib_inventory_subjects_category CASCADE;;
 --DROP TABLE IF EXISTS lib_global_log CASCADE;
+--DROP TABLE IF EXISTS lib_global_log_types CASCADE;
 --DROP TABLE IF EXISTS lib_users CASCADE;
 
 --Group 1
@@ -31,12 +32,27 @@ CREATE TABLE lib_users(
     usersPwd VARCHAR(128) NOT NULL
 );
 
+CREATE TABLE lib_global_log_types(
+    section_type SERIAL NOT NULL PRIMARY KEY,
+    type_name VARCHAR(128)
+);
+
+--INSERT INTO lib_global_log_types(type_name) VALUES('User Log In');
+--INSERT INTO lib_global_log_types(type_name) VALUES('Registration');
+--INSERT INTO lib_global_log_types(type_name) VALUES('Transaction');
+--INSERT INTO lib_global_log_types(type_name) VALUES('Visitor Log');
+--INSERT INTO lib_global_log_types(type_name) VALUES('Transaction Request');
+--INSERT INTO lib_global_log_types(type_name) VALUES('Transaction Penalty');
+--INSERT INTO lib_global_log_types(type_name) VALUES('Transaction Status');
+
 --Create Global Log Table
 CREATE TABLE lib_global_log(
     glogID BIGSERIAL NOT NULL PRIMARY KEY,
     section_type INT,
     log_desc TEXT UNIQUE,
-    date_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL 
+    date_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    CONSTRAINT fk_section_type FOREIGN KEY(section_type) REFERENCES lib_global_log_types(section_type)
+
 );
 
 --Create Subject Category Table

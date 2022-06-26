@@ -6,6 +6,10 @@ DROP VIEW IF EXISTS inventory_view;
 DROP VIEW IF EXISTS transactions_request_view_s;
 DROP VIEW IF EXISTS transactions_request_view_f;
 DROP VIEW IF EXISTS transactions_view;
+DROP VIEW IF EXISTS visitor_view;
+DROP VIEW IF EXISTS masterlist_student_view;
+DROP VIEW IF EXISTS masterlist_faculty_view;
+DROP VIEW IF EXISTS global_log_view;
 
 --Create Views
 --Create View for Inventory
@@ -36,3 +40,31 @@ CREATE VIEW transactions_view as
     FROM lib_transactions t, lib_transactions_status r,  lib_inventory i
     WHERE t.transactionID = r.transactionID AND t.resourceID = i.resourceID
     ORDER BY t.transactionID DESC;
+
+--Create View for Visitors
+CREATE VIEW visitor_view as
+    SELECT v.visitorid as V_ID, v.firstName as fname, v.lastName as lname, v.section as sec, v.yearLevel as year, d.teacherInCharge as t_in_c, d.timeIn as time_in, d.timeout as time_out 
+    FROM lib_visitors v, lib_visitors_details d
+    WHERE v.visitorid = d.visitorid 
+    ORDER BY v.visitorid DESC;
+
+--Create View for MasterList - S 
+CREATE VIEW masterlist_student_view as
+    SELECT m.referenceID as refid, s.firstName as fname, s.lastName as lname, s.section as sec, s.yearLevel as year, m.Date_Created as regdate
+    FROM lib_master_list m, lib_students s
+    WHERE m.referenceID = s.studentID
+    ORDER BY m.referenceID DESC;
+
+--Create View for MasterList - F 
+CREATE VIEW masterlist_faculty_view as
+    SELECT m.referenceID as refid, f.firstName as fname, f.lastName as lname, f.position as facpos, m.Date_Created as regdate
+    FROM lib_master_list m, lib_faculty f
+    WHERE m.referenceID = f.facultyID
+    ORDER BY m.referenceID DESC;
+
+--Create View for glog
+CREATE VIEW global_log_view as
+    SELECT g.glogID as glogID, t.type_name as type_name, g.log_desc as log_desc, g.date_time as dateproc 
+    FROM lib_global_log g, lib_global_log_types t
+    WHERE g.section_type = t.section_type
+    ORDER BY g.glogID DESC;

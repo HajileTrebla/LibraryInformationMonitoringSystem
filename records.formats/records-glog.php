@@ -79,7 +79,7 @@ if (!isset($_SESSION["useruid"])) {
             <div class="hero">
                 <div class="mainText1">
                     <div class="line2">
-                        Visitor Record
+                        Global Log Record
                     </div>
                 </div>
                 <div class="select-area">
@@ -90,6 +90,9 @@ if (!isset($_SESSION["useruid"])) {
                                 <div class="col-md-2">
                                    <a href="../records.php"><input type="button" name="return" id="return" value="To Records" class="btn btn-info" /></a> 
                                 </div>
+                                <div class="col-md-2">
+                                   <a href="../records.formats/records-maslist.php"><input type="button" name="change" id="change" value="Students" class="btn btn-info" /></a> 
+                                </div>
 
                             </div>
                         </div>
@@ -97,12 +100,10 @@ if (!isset($_SESSION["useruid"])) {
                         <table id="inventory_data" class="table table-bordered table-striped dt-responsive nowrap">
                             <thead>
                                 <tr>
-                                    <th>Visitor ID</th>
-                                    <th>Name</th>
-                                    <th>Year and Section</th>
-                                    <th>Teacher in Charge</th>
-                                    <th>Time In</th>
-                                    <th>Time Out</th>
+                                    <th>Global Log ID</th>
+                                    <th>Section Type</th>
+                                    <th>Log Description</th>
+                                    <th>Date Processed</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -112,7 +113,7 @@ require_once '../php.functions/functions.inc.php';
 
 $dbConn = getConn();
 
-$sql = "SELECT * FROM visitor_view";
+$sql = "SELECT * FROM global_log_view";
 
 $result = pg_query($dbConn, $sql);
 
@@ -120,11 +121,9 @@ while ($row = pg_fetch_row($result)) {
     echo "
         <tr>
             <th>$row[0]</th>
-            <th>$row[1] $row[2]</th>
-            <th>year $row[4] section $row[3]</th>
-            <th>$row[5]</th>
-            <th>$row[6]</th>
-            <th>$row[7]</th>
+            <th>$row[1]</th>
+            <th>$row[2]</th>
+            <th>$row[3]</th>
         </tr>
 ";
 }

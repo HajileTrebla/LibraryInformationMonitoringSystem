@@ -3,7 +3,7 @@ $(document).ready(function(){
             "order" : [],
             dom: "Bfrtip",
             buttons: [
-                'copy', 'pdf', 'print'
+                'copy', 'csv', 'excel','pdf', 'print'
             ]
     });
 });
