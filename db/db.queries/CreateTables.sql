@@ -147,7 +147,9 @@ CREATE TABLE lib_visitors(
     visitorID BIGSERIAL NOT NULL PRIMARY KEY,
     firstName VARCHAR(50),
     lastName VARCHAR(50),
-    referenceID BIGINT NOT NULL,
+    section VARCHAR(15),
+    yearLevel INT,
+    referenceID BIGINT,
     logID BIGINT NOT NULL UNIQUE,
     CONSTRAINT fk_logID FOREIGN KEY(logID) REFERENCES lib_global_log(glogID),
     CONSTRAINT fk_referenceID FOREIGN KEY(referenceID) REFERENCES lib_master_list(referenceID)

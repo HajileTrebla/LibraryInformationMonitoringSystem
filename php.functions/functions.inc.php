@@ -111,3 +111,61 @@ function generateLog($section_type, $log_desc)
     $log = getLatest('lib_global_log', 'glogid');
     return $log[0];
 }
+
+function getSinf($refid)
+{
+    require_once 'dbh.inc.php';
+
+    $dbConn = getConn();
+
+    $sqls = "SELECT firstname, lastname, section, yearLevel
+             FROM lib_students
+             WHERE studentID = $1";
+
+    if (!pg_send_query($dbConn, $sqls)) {
+        header("Location: ../borrow.php?error=stmtfailed");
+        exit();
+    }
+
+    pg_prepare($dbConn, "getSinf", $sqls);
+    $result = pg_execute($dbConn, "getSinf", array($refid));
+
+    $row = pg_fetch_row($result);
+    return $row;
+}
+
+function visitLog($fname, $lname, $sec, $year, $tinc, $log, $refid = null)
+{
+    require_once 'dbh.inc.php';
+
+    $dbConn = getConn();
+
+    $sqlv = "INSERT
+             INTO lib_visitors(firstName, lastName, section, yearLevel, referenceID, logID)
+             VALUES($1, $2, $3, $4, $5, $6)";
+
+    $sqlvd = "INSERT
+             INTO lib_visitors_details(visitorID, teacherInCharge)
+             VALUES($1, $2)";
+
+    if (!pg_send_query($dbConn, $sqlv)) {
+        header("Location: ../borrow.php?error=stmtfailed");
+        exit();
+    }
+
+    pg_prepare($dbConn, "visit-log", $sqlv);
+    pg_execute($dbConn, "visit-log", array($fname, $lname, $sec, $year, $refid, $log));
+
+    $Vid = getLatest('lib_visitors', 'visitorID');
+
+
+    if (!pg_send_query($dbConn, $sqlvd)) {
+        header("Location: ../borrow.php?error=stmtfailed");
+        exit();
+    }
+
+    pg_prepare($dbConn, "visit-det", $sqlvd);
+    pg_execute($dbConn, "visit-det", array($Vid[0], $tinc));
+
+    return $Vid[0];
+}

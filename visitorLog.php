@@ -92,10 +92,10 @@ session_start();
                             </div>
                             <div class="regBody">
                                 <div class="regForm">
-                                    <form>
+                                    <form action="php.functions/visit.inc.php" method="POST">
                                         <input type="text" name="refid" placeholder="id-number">
                                         <input type="text" name="tinc" placeholder="teacher-in-charge">
-                                        <button type="submit" class="visitorSubmit1">Submit</button>
+                                        <button type="submit" class="visitorSubmit1" name="regSub">Submit</button>
                                     </form>
                                 </div>
                             </div>
@@ -106,13 +106,13 @@ session_start();
                             </div>
                             <div class="unregBody">
                                 <div class="unregForm">
-                                    <form>
+                                    <form action="php.functions/visit.inc.php" method="POST">
                                         <input type="text" name="fname" placeholder="first-name">
                                         <input type="text" name="lname" placeholder="last-name">
-                                        <input type="text" name="year" placeholder="year">
                                         <input type="text" name="sec" placeholder="section">
+                                        <input type="text" name="year" placeholder="year">
                                         <input type="text" name="tinc" placeholder="teacher-in-charge">
-                                        <button type="submit" class="visitorSubmit1">Submit</button>
+                                        <button type="submit" class="visitorSubmit1" name="uregSub">Submit</button>
                                     </form>
                                 </div>
                             </div>
