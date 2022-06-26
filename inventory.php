@@ -56,7 +56,6 @@ if (!isset($_SESSION["useruid"])) {
                         }
                         ?>
 
-                        <li><a href="../LibraryInformationMonitoringSystem/visitorLog.php">Visitor Log</a></li>
                         <li><a href="../LibraryInformationMonitoringSystem/about.php">About</a></li>
                         <?php
                         if (isset($_SESSION["useruid"])) {
@@ -71,7 +70,7 @@ if (!isset($_SESSION["useruid"])) {
         </div>
         <div class="Wrapper">
             <div class="hero">
-                <div class="mainText">
+                <div class="mainText1">
                     <div class="line2">
                         Library Inventory
                     </div>

@@ -36,7 +36,6 @@ session_start();
                             echo '<li><a href="#" class="button" id="Login-button">Login</a></li>';
                         }
                         ?>
-                        <li><a href="../LibraryInformationMonitoringSystem/visitorLog.php">Visitor Log</a></li>
                         <li><a href="../LibraryInformationMonitoringSystem/about.php">About</a></li>
                         <?php
                         if (isset($_SESSION["useruid"])) {

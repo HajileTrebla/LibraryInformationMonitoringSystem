@@ -43,7 +43,6 @@ session_start();
                         }
                         ?>
 
-                        <li><a href="../LibraryInformationMonitoringSystem/visitorLog.php">Visitor Log</a></li>
                         <li><a href="../LibraryInformationMonitoringSystem/about.php">About</a></li>
                         <?php
                         if (isset($_SESSION["useruid"])) {
@@ -119,8 +118,10 @@ session_start();
                             </div>
                         </div>
                     </div>
-                    <a href="../LibraryInformationMonitoringSystem/borrow.php"><button type="button" class="borrow" id="borrow">Borrow</button></a>
-                    <a href="#Register"><button type="button" class="register" id="register">Register</button></a>
+                    <div class="bottomButtons">
+                        <a href="../LibraryInformationMonitoringSystem/borrow.php"><button type="button" class="borrow" id="borrow">Borrow</button></a>
+                        <a href="#Register"><button type="button" class="register" id="register">Register</button></a>
+                    </div>
                 </div>
             </div>
 
