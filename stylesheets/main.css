@@ -874,3 +874,28 @@ html{
     position: relative;
     top: 15.5em;
 }
+
+.recButtons li{
+    list-style-type: none;
+}
+
+.recButton:hover{
+    background: darkolivegreen;
+}
+
+.recButton{
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    text-decoration: none;
+    position: relative;
+    left: 8%;
+    bottom: 7em;
+    float: left;
+    font-weight: 700;
+    color: white;
+    padding: 1em 2em 1em;
+    text-transform: uppercase;
+    border: none;
+    background: rgba(0, 0, 0, 0.5);
+}
+
