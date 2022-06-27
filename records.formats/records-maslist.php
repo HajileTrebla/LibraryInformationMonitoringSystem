@@ -122,7 +122,7 @@ while ($row = pg_fetch_row($result)) {
         <tr>
             <th>$row[0]</th>
             <th>$row[1] $row[2]</th>
-            <th>year $row[3] section $row[4]</th>
+            <th>year $row[4] section $row[3]</th>
             <th>$row[5]</th>
         </tr>
 ";

@@ -71,18 +71,18 @@ $_SESSION["uborrow"] = true;
                         Library Inventory - Borrow System
                     </div>
                 </div>
-                <div class="popup">
+                <div class="popup1">
                     <div class="login">
-                        <div class="loginForm">
-                            <div class="loginHeader">BORROW
+                        <div class="loginForm1">
+                            <div class="loginHeader1">BORROW
                             </div>
-                            <div><img src="/LibraryInformationMonitoringSystem/assets.img/closebutton.png" alt="X" class="close">
+                            <div><img src="/LibraryInformationMonitoringSystem/assets.img/closebutton.png" alt="X" class="close1">
                             </div>
                             <div class="loginText">
                                 <form action="php.functions/borrow.inc.php" method="POST">
-                                    <input type="text" name="refid" id="refid" readonly>
-                                    <input type="text" name="bid" placeholder="Borrower ID...">
-                                    <a href=""><button type="submit" class="submit" name="borrow">BORROW</button></a>
+                                    <div class="borrowInput"><input type="text" name="refid" id="refid" readonly></div>
+                                    <div class="borrowInput"><input type="text" name="bid" placeholder="Borrower ID..."></div>
+                                    <a href=""><button type="submit" class="submit5" name="borrow">BORROW</button></a>
                                 </form>
                             </div>
                         </div>

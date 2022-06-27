@@ -279,6 +279,7 @@ input{
     font-size: 15px;
     display: block;
     text-align: center;
+    border: none;
     background: #2C7A56;
     border-radius: 1.4em;
     padding: 0.6em;
@@ -884,17 +885,99 @@ html{
 
 .recButton{
     font-family: "Poppins", sans-serif;
-    font-size: 15px;
+    font-size: 18px;
     text-decoration: none;
     position: relative;
-    left: 8%;
-    bottom: 7em;
+    left: 5%;
+    top: 5em;
     float: left;
     font-weight: 700;
     color: white;
-    padding: 1em 2em 1em;
+    padding: 1.5em 3em 1.5em;
     text-transform: uppercase;
     border: none;
     background: rgba(0, 0, 0, 0.5);
 }
 
+.popup1{
+    background: (0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 999;
+    top: 5em;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.loginForm1{
+    height: 320px;
+    width: 500px;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    border: solid 2px black;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.loginHeader1{
+    width: 500px;
+    height: 117px;
+    position: relative;
+    bottom: 1em;
+    right: 0.55em;
+    border: solid 2px black;
+    text-align: center;
+    font-weight: 700;
+    font-size: 40px;
+    font-family: 'Grandstander', cursive;
+    color: white;
+    line-height: 120px;
+
+    background: #100B0B;
+    border-bottom: 7px solid #2C7A56;
+}
+
+.borrowInput{
+    display: block;
+    position: relative;
+    left: 18%;
+    bottom: 1em;
+    width: 120%;
+}
+
+.submit5 {
+    text-decoration: none;
+    position: relative;
+    left: 36.5%;
+    top: 1em;
+    font-weight: 400;
+    font-size: 15px;
+    display: block;
+    text-align: center;
+    background: #2C7A56;
+    border-radius: 1.4em;
+    padding: 0.6em;
+    width: 7em;
+    border: none;
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+.submit5:hover{
+    background-color: black;
+    border-radius: 1.4em;
+}
+
+.close1{
+    position: relative;
+    left: 33.4em;
+    bottom: 11.6em;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
